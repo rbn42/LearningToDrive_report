@@ -9,6 +9,8 @@ build
 .project
 .pydevproject
 .directory
-report.pdf
-report.html
 report.tex
+*.aux
+*.out
+*.pdf
+*.html
