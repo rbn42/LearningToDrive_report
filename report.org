@@ -1,6 +1,4 @@
-#+LaTeX_CLASS: zh-article
 #+TITLE: My little document
-
 * Progress History / 项目进度
 ** Inspiration / 启发
 *** DQN算法
@@ -18,20 +16,32 @@
     
     由此,我们通过这个视频知道了,强化学习算法,可以通过一维的前方距离信息
     以及撞击惩罚,来训练一个agent/机器人/小车学会避开障碍物.
+**** 相关文献
+     之后我在文献中找到了一个相近的实现
+- 引用 :: http://dl.acm.org/citation.cfm?id=1102426
+- Pdf :: http://machinelearning.wustl.edu/mlpapers/paper_files/icml2005_MichelsSN05.pdf
 ** Reimplement / 重现视频所实现的东西
    由于我们没有视频中的程序的代码,我们要做的第一件事情,就是重现视频中的场景,
    训练一个agent在一个类似的二维空间中学会避障.
    
    由于我们的最终目标是训练agent学会在三维空间中避障.
    因此,出于便利性的考虑,我们在这个阶段已经完成了三维虚拟环境,
+
    但是在算法中仍然将其视作一个二维空间,模拟成视频中的场景
    
    具体的操作方法是,
    1. 首先,根据场景内的三维模型生成[[https://en.wikipedia.org/wiki/Depth_map][深度信息]].
    2. 然后,截取地平线的部分,作为对视频中的一维距离信息的模拟,发送给agent
       
+   #+CAPTION: agent视角的虚拟三维环境,通过三维引擎的立体视觉模式加入了左右两个视角.
+   #+NAME:   fig:shot-stereo
+   [[file:images/screenshot/stereo.png]]
+      
+   #+CAPTION: 通过三维引擎直接生成的深度信息.
+   #+NAME:   fig:shot-depth
+   [[file:images/screenshot/depth.png]]
+
 * Introduction
-  
   介绍下我们要处理的问题是什么，
   我们研究的是，在一个模拟的环境中，让agent学会在避开障碍物的情况下能够自行找到一个指定的目标。我们会使用RL算法来训练agent.
   找不到paper,就用皮箱吧.
@@ -923,7 +933,3 @@
    1.3D环境的训练
    2.从失败中恢复的能力,为向真是环境迁移
    3.切换使用深度算法
-* latex测试
-   $$\frac{1}{\sqrt{2\pi\sigma^2}}e^{ -\frac{(x-\mu)^2}{2\sigma^2} }$$
-   
-   
