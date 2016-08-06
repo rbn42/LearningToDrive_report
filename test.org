@@ -4,8 +4,19 @@
 ** 公式
     $$\frac{1}{\sqrt{2\pi\sigma^2}}e^{ -\frac{(x-\mu)^2}{2\sigma^2} }$$
 ** 表格caption
-    表格的问题是,caption显示的位置不对,
-    而且表格并不居中
+    表格的问题是,caption显示的位置在顶部,
+    而且表格并不居中,本来想测试下pdf的效果,不过latex坏了.所以暂且放着
+应该是可以解决的问题吧.
+\#+ATTR_HTML: class="center"
+
+    #+CAPTION: This is the caption for the next table (or link)
+#+NAME:   tab:basic-data
+   | awef     | aiwfeofj  | afaw     | safwea |
+   |----------+-----------+----------+--------|
+   | afiwoefj | fwiaoejfi | fjiweoaf | fe     |
+   | sfajwief | s         |          |        |
+   |          |           |          |        |
+    
 ** ?
 ** 图片caption
    
