@@ -1,0 +1,23 @@
+#+LaTeX_CLASS: zh-article
+#+TITLE: My little document
+* latex测试
+** 公式
+    $$\frac{1}{\sqrt{2\pi\sigma^2}}e^{ -\frac{(x-\mu)^2}{2\sigma^2} }$$
+** 表格caption
+    表格的问题是,caption显示的位置不对,
+    而且表格并不居中
+** ?
+** 图片caption
+   
+    #+CAPTION: This is the caption for the next figure link (or table)
+    #+NAME:   fig:SED-HR4049
+    [[file:images/screenshot/stereo.png]]
+
+    emacs中的文件补全还不熟悉,所以文件路径编辑可能要用vim做.
+** ?
+   ./images/screenshot/depth.png
+   ./images/screenshot/stereo_1channel.png
+** 问题 
+之前这份文件转换到latex pdf是没有问题的,但是似乎这天电脑上的什么配置被搞坏了,
+所以只有等到之后有时间重装下系统来修复了,所以暂时只能输出html了
+
