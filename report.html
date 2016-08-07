@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-08-08 Mon 06:08 -->
+<!-- 2016-08-08 Mon 06:41 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>My little document</title>
@@ -147,7 +147,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline13">1. Progress History / 项目进度</a>
+<li><a href="#orgheadline21">1. Progress History / 项目进度</a>
 <ul>
 <li><a href="#orgheadline5">1.1. Inspiration / 启发</a>
 <ul>
@@ -179,83 +179,100 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
+<li><a href="#orgheadline19">1.3. 三维环境</a>
+<ul>
+<li><a href="#orgheadline16">1.3.1. 深度信息 / Depth Map</a>
+<ul>
+<li><a href="#orgheadline13">1.3.1.1. <span class="todo TODO">TODO</span> Finetune</a></li>
+<li><a href="#orgheadline14">1.3.1.2. 通过双视角图像计算Depth Map</a></li>
+<li><a href="#orgheadline15">1.3.1.3. 直接通过三维引擎获取Depth Map</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline14">2. Introduction</a></li>
-<li><a href="#orgheadline20">3. Background</a>
+<li><a href="#orgheadline18">1.3.2. 真实图像 / Raw Image</a>
 <ul>
-<li><a href="#orgheadline15">3.1. root</a></li>
-<li><a href="#orgheadline16">3.2. Deep Learning</a></li>
-<li><a href="#orgheadline17">3.3. Convolutional Neural Networks</a></li>
-<li><a href="#orgheadline18">3.4. Data Augmentation</a></li>
-<li><a href="#orgheadline19">3.5. Backpropagation</a></li>
-</ul>
-</li>
-<li><a href="#orgheadline46">4. Methods</a>
-<ul>
-<li><a href="#orgheadline21">4.1. root</a></li>
-<li><a href="#orgheadline31">4.2. Virtual Environment / 虚拟环境</a>
-<ul>
-<li><a href="#orgheadline24">4.2.1. 3D Engine</a>
-<ul>
-<li><a href="#orgheadline22">4.2.1.1. Chinese</a></li>
-<li><a href="#orgheadline23">4.2.1.2. English</a></li>
-</ul>
-</li>
-<li><a href="#orgheadline25">4.2.2. Environment / 环境　</a></li>
-<li><a href="#orgheadline26">4.2.3. Other Plan / 另一个计划</a></li>
-<li><a href="#orgheadline30">4.2.4. Performance Problems / 性能问题</a>
-<ul>
-<li><a href="#orgheadline27">4.2.4.1. Refresh Rate</a></li>
-<li><a href="#orgheadline28">4.2.4.2. Data Transmission between Video RAM and Main RAM</a></li>
-<li><a href="#orgheadline29">4.2.4.3. Time Record / 时间记录</a></li>
+<li><a href="#orgheadline17">1.3.2.1. 问题</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline34">4.3. Collision Detection</a>
-<ul>
-<li><a href="#orgheadline32">4.3.1. Panda3D Built-In</a></li>
-<li><a href="#orgheadline33">4.3.2. Bullet</a></li>
+<li><a href="#orgheadline20">1.4. 目标导航</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline35">4.4. Avoiding Obstacles</a></li>
-<li><a href="#orgheadline36">4.5. Reward Rules</a></li>
-<li><a href="#orgheadline37">4.6. Depth Map</a></li>
-<li><a href="#orgheadline38">4.7. Histroy Data</a></li>
-<li><a href="#orgheadline39">4.8. Overfitting and Data Augmentation</a></li>
-<li><a href="#orgheadline40">4.9. Ensemble</a></li>
-<li><a href="#orgheadline41">4.10. Short Term Memory?</a></li>
-<li><a href="#orgheadline42">4.11. Network Architecture</a></li>
-<li><a href="#orgheadline43">4.12. Navigation</a></li>
-<li><a href="#orgheadline44">4.13. Reward Rules</a></li>
-<li><a href="#orgheadline45">4.14. Network Architecture</a></li>
+<li><a href="#orgheadline22">2. Introduction</a></li>
+<li><a href="#orgheadline28">3. Background</a>
+<ul>
+<li><a href="#orgheadline23">3.1. root</a></li>
+<li><a href="#orgheadline24">3.2. Deep Learning</a></li>
+<li><a href="#orgheadline25">3.3. Convolutional Neural Networks</a></li>
+<li><a href="#orgheadline26">3.4. Data Augmentation</a></li>
+<li><a href="#orgheadline27">3.5. Backpropagation</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline48">5. Reinforcement Learning</a>
+<li><a href="#orgheadline54">4. Methods</a>
 <ul>
-<li><a href="#orgheadline47">5.1. Deep Q Learning</a></li>
+<li><a href="#orgheadline29">4.1. root</a></li>
+<li><a href="#orgheadline39">4.2. Virtual Environment / 虚拟环境</a>
+<ul>
+<li><a href="#orgheadline32">4.2.1. 3D Engine</a>
+<ul>
+<li><a href="#orgheadline30">4.2.1.1. Chinese</a></li>
+<li><a href="#orgheadline31">4.2.1.2. English</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline49">6. Other Works in Obstacle Avoidance</a></li>
-<li><a href="#orgheadline52">7. Function Merging</a>
+<li><a href="#orgheadline33">4.2.2. Environment / 环境　</a></li>
+<li><a href="#orgheadline34">4.2.3. Other Plan / 另一个计划</a></li>
+<li><a href="#orgheadline38">4.2.4. Performance Problems / 性能问题</a>
 <ul>
-<li><a href="#orgheadline50">7.1. Network Architecture</a></li>
-<li><a href="#orgheadline51">7.2. Pretrained Models</a></li>
+<li><a href="#orgheadline35">4.2.4.1. Refresh Rate</a></li>
+<li><a href="#orgheadline36">4.2.4.2. Data Transmission between Video RAM and Main RAM</a></li>
+<li><a href="#orgheadline37">4.2.4.3. Time Record / 时间记录</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline53">8. Experiments</a></li>
-<li><a href="#orgheadline55">9. Conclusions</a>
+</ul>
+</li>
+<li><a href="#orgheadline42">4.3. Collision Detection</a>
 <ul>
-<li><a href="#orgheadline54">9.1. {Future}</a></li>
+<li><a href="#orgheadline40">4.3.1. Panda3D Built-In</a></li>
+<li><a href="#orgheadline41">4.3.2. Bullet</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline43">4.4. Avoiding Obstacles</a></li>
+<li><a href="#orgheadline44">4.5. Reward Rules</a></li>
+<li><a href="#orgheadline45">4.6. Depth Map</a></li>
+<li><a href="#orgheadline46">4.7. Histroy Data</a></li>
+<li><a href="#orgheadline47">4.8. Overfitting and Data Augmentation</a></li>
+<li><a href="#orgheadline48">4.9. Ensemble</a></li>
+<li><a href="#orgheadline49">4.10. Short Term Memory?</a></li>
+<li><a href="#orgheadline50">4.11. Network Architecture</a></li>
+<li><a href="#orgheadline51">4.12. Navigation</a></li>
+<li><a href="#orgheadline52">4.13. Reward Rules</a></li>
+<li><a href="#orgheadline53">4.14. Network Architecture</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline56">5. Reinforcement Learning</a>
+<ul>
+<li><a href="#orgheadline55">5.1. Deep Q Learning</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline57">6. Other Works in Obstacle Avoidance</a></li>
+<li><a href="#orgheadline60">7. Function Merging</a>
+<ul>
+<li><a href="#orgheadline58">7.1. Network Architecture</a></li>
+<li><a href="#orgheadline59">7.2. Pretrained Models</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline61">8. Experiments</a></li>
+<li><a href="#orgheadline63">9. Conclusions</a>
+<ul>
+<li><a href="#orgheadline62">9.1. {Future}</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgheadline13" class="outline-2">
-<h2 id="orgheadline13"><span class="section-number-2">1</span> Progress History / 项目进度</h2>
+<div id="outline-container-orgheadline21" class="outline-2">
+<h2 id="orgheadline21"><span class="section-number-2">1</span> Progress History / 项目进度</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-orgheadline5" class="outline-3">
 <h3 id="orgheadline5"><span class="section-number-3">1.1</span> Inspiration / 启发</h3>
@@ -408,10 +425,71 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
+<div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19"><span class="section-number-3">1.3</span> 三维环境</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+在能够实现视频中的东西之后,我们开始尝试将其从二维环境转换到三维环境.
+</p>
 </div>
-
-<div id="outline-container-orgheadline14" class="outline-2">
-<h2 id="orgheadline14"><span class="section-number-2">2</span> Introduction</h2>
+<div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">1.3.1</span> 深度信息 / Depth Map</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+由于在视频中,agent接收的信息是一维的障碍物距离.对应到三维环境中就是二维的障碍物距离,也就是Depth Map.
+由于我们已知通过一维的障碍物距离进行训练是一个有效的办法,类推用二维距离信息也可能是有效的.
+</p>
+</div>
+<div id="outline-container-orgheadline13" class="outline-5">
+<h5 id="orgheadline13"><span class="section-number-5">1.3.1.1</span> <span class="todo TODO">TODO</span> Finetune</h5>
+<div class="outline-text-5" id="text-1-3-1-1">
+<p>
+有一些计算Depth Map的算法是基于神经网络的.所以我们原本打算,如果使用这样的算法,可以连同其和DQN中的神经网络一起做后期finetune进一步提升性能.
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline14" class="outline-5">
+<h5 id="orgheadline14"><span class="section-number-5">1.3.1.2</span> 通过双视角图像计算Depth Map</h5>
+<div class="outline-text-5" id="text-1-3-1-2">
+<p>
+存在着通过双视角和单视角计算Depth Map的方法(文献),其中双视角比单视角高效.我们使用了opencv内置的算法,但是很可惜输出结果不够理想.
+</p>
+</div>
+</div>
+<div id="outline-container-orgheadline15" class="outline-5">
+<h5 id="orgheadline15"><span class="section-number-5">1.3.1.3</span> 直接通过三维引擎获取Depth Map</h5>
+<div class="outline-text-5" id="text-1-3-1-3">
+<p>
+这是一个有点接近作弊的方案,因为这只有在虚拟环境中,我们掌握着三维模型的情况下才能得到.但是使用这个办法可以得到完美的Depth Map.我们希望确认,至少通过最完美的Depth Map,可以训练出较好的结果.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline18" class="outline-4">
+<h4 id="orgheadline18"><span class="section-number-4">1.3.2</span> 真实图像 / Raw Image</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+在确认了通过深度信息也能学会避障之后,我们开始测试,确认了,直接通过真实图像就能够做到让agent学会避障.
+</p>
+</div>
+<div id="outline-container-orgheadline17" class="outline-5">
+<h5 id="orgheadline17"><span class="section-number-5">1.3.2.1</span> 问题</h5>
+<div class="outline-text-5" id="text-1-3-2-1">
+<p>
+我们无法确保agent学会的能力是泛用的,即不仅仅在训练其的虚拟环境中适用,也能在未知环境中适用.
+推测在使用Depth Map的情况下,神经网络只需要收敛到一个能够判断哪个转向反向的障碍物更遥远的函数,这样的函数的适用性应该是比较广的.
+但是在使用真实图像的时候,可能k就
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20"><span class="section-number-3">1.4</span> 目标导航</h3>
+</div>
+</div>
+<div id="outline-container-orgheadline22" class="outline-2">
+<h2 id="orgheadline22"><span class="section-number-2">2</span> Introduction</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 介绍下我们要处理的问题是什么，
@@ -434,11 +512,11 @@ rl之外自然是有的,大疆就是这么做的.rl领域来说似乎导航不�
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline20" class="outline-2">
-<h2 id="orgheadline20"><span class="section-number-2">3</span> Background</h2>
+<div id="outline-container-orgheadline28" class="outline-2">
+<h2 id="orgheadline28"><span class="section-number-2">3</span> Background</h2>
 <div class="outline-text-2" id="text-3">
-</div><div id="outline-container-orgheadline15" class="outline-3">
-<h3 id="orgheadline15"><span class="section-number-3">3.1</span> root</h3>
+</div><div id="outline-container-orgheadline23" class="outline-3">
+<h3 id="orgheadline23"><span class="section-number-3">3.1</span> root</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 介绍下那些人处理过了
@@ -451,24 +529,24 @@ rl之外自然是有的,大疆就是这么做的.rl领域来说似乎导航不�
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline16" class="outline-3">
-<h3 id="orgheadline16"><span class="section-number-3">3.2</span> Deep Learning</h3>
+<div id="outline-container-orgheadline24" class="outline-3">
+<h3 id="orgheadline24"><span class="section-number-3">3.2</span> Deep Learning</h3>
 </div>
-<div id="outline-container-orgheadline17" class="outline-3">
-<h3 id="orgheadline17"><span class="section-number-3">3.3</span> Convolutional Neural Networks</h3>
+<div id="outline-container-orgheadline25" class="outline-3">
+<h3 id="orgheadline25"><span class="section-number-3">3.3</span> Convolutional Neural Networks</h3>
 </div>
-<div id="outline-container-orgheadline18" class="outline-3">
-<h3 id="orgheadline18"><span class="section-number-3">3.4</span> Data Augmentation</h3>
+<div id="outline-container-orgheadline26" class="outline-3">
+<h3 id="orgheadline26"><span class="section-number-3">3.4</span> Data Augmentation</h3>
 </div>
-<div id="outline-container-orgheadline19" class="outline-3">
-<h3 id="orgheadline19"><span class="section-number-3">3.5</span> Backpropagation</h3>
+<div id="outline-container-orgheadline27" class="outline-3">
+<h3 id="orgheadline27"><span class="section-number-3">3.5</span> Backpropagation</h3>
 </div>
 </div>
-<div id="outline-container-orgheadline46" class="outline-2">
-<h2 id="orgheadline46"><span class="section-number-2">4</span> Methods</h2>
+<div id="outline-container-orgheadline54" class="outline-2">
+<h2 id="orgheadline54"><span class="section-number-2">4</span> Methods</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-orgheadline21" class="outline-3">
-<h3 id="orgheadline21"><span class="section-number-3">4.1</span> root</h3>
+</div><div id="outline-container-orgheadline29" class="outline-3">
+<h3 id="orgheadline29"><span class="section-number-3">4.1</span> root</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 我们做的分两部分，一部分是导航，一部分是避障，导航部分只有完成了设计。而且没有依据。避障部分完成了
@@ -488,14 +566,14 @@ rl之外自然是有的,大疆就是这么做的.rl领域来说似乎导航不�
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline31" class="outline-3">
-<h3 id="orgheadline31"><span class="section-number-3">4.2</span> Virtual Environment / 虚拟环境</h3>
+<div id="outline-container-orgheadline39" class="outline-3">
+<h3 id="orgheadline39"><span class="section-number-3">4.2</span> Virtual Environment / 虚拟环境</h3>
 <div class="outline-text-3" id="text-4-2">
-</div><div id="outline-container-orgheadline24" class="outline-4">
-<h4 id="orgheadline24"><span class="section-number-4">4.2.1</span> 3D Engine</h4>
+</div><div id="outline-container-orgheadline32" class="outline-4">
+<h4 id="orgheadline32"><span class="section-number-4">4.2.1</span> 3D Engine</h4>
 <div class="outline-text-4" id="text-4-2-1">
-</div><div id="outline-container-orgheadline22" class="outline-5">
-<h5 id="orgheadline22"><span class="section-number-5">4.2.1.1</span> Chinese</h5>
+</div><div id="outline-container-orgheadline30" class="outline-5">
+<h5 id="orgheadline30"><span class="section-number-5">4.2.1.1</span> Chinese</h5>
 <div class="outline-text-5" id="text-4-2-1-1">
 <p>
 由于我们在ML的部分主要是使用了同样是python环境中的theano,考虑到虚拟环境和theano之间存在大量的数据交互，
@@ -504,8 +582,8 @@ rl之外自然是有的,大疆就是这么做的.rl领域来说似乎导航不�
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline23" class="outline-5">
-<h5 id="orgheadline23"><span class="section-number-5">4.2.1.2</span> English</h5>
+<div id="outline-container-orgheadline31" class="outline-5">
+<h5 id="orgheadline31"><span class="section-number-5">4.2.1.2</span> English</h5>
 <div class="outline-text-5" id="text-4-2-1-2">
 <p>
 We will build a virtual environment. And a large amount of data of images will be transferred between the virtual environment 
@@ -517,8 +595,8 @@ So we choose Panda3D, a 3D game development environment also in Python language.
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline25" class="outline-4">
-<h4 id="orgheadline25"><span class="section-number-4">4.2.2</span> Environment / 环境　</h4>
+<div id="outline-container-orgheadline33" class="outline-4">
+<h4 id="orgheadline33"><span class="section-number-4">4.2.2</span> Environment / 环境　</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <p>
 我们使用的model 来自于 padna3d的demo
@@ -527,16 +605,16 @@ As show in the Figure, models of obstacles include chess pieces and walls.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline26" class="outline-4">
-<h4 id="orgheadline26"><span class="section-number-4">4.2.3</span> Other Plan / 另一个计划</h4>
+<div id="outline-container-orgheadline34" class="outline-4">
+<h4 id="orgheadline34"><span class="section-number-4">4.2.3</span> Other Plan / 另一个计划</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <p>
 最初的计划中，我们是希望设计两个不同的场景的，第一个是给予agent在地面活动的自由，就像遥控车。第二个是希望给予agent在三维空间活动的自由。但是由于物理引擎的原因，没有做到。最终，我们只设计了在agent在二维空间中活动的情景
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline30" class="outline-4">
-<h4 id="orgheadline30"><span class="section-number-4">4.2.4</span> Performance Problems / 性能问题</h4>
+<div id="outline-container-orgheadline38" class="outline-4">
+<h4 id="orgheadline38"><span class="section-number-4">4.2.4</span> Performance Problems / 性能问题</h4>
 <div class="outline-text-4" id="text-4-2-4">
 <p>
 这里是一些由于技术不足导致的性能问题。
@@ -544,8 +622,8 @@ There are some performance problems caused by technique inabilities,
 which make us unable to fully utilize the hardware's computation power.
 </p>
 </div>
-<div id="outline-container-orgheadline27" class="outline-5">
-<h5 id="orgheadline27"><span class="section-number-5">4.2.4.1</span> Refresh Rate</h5>
+<div id="outline-container-orgheadline35" class="outline-5">
+<h5 id="orgheadline35"><span class="section-number-5">4.2.4.1</span> Refresh Rate</h5>
 <div class="outline-text-5" id="text-4-2-4-1">
 <p>
 受限于我们使用的三维引擎本身的设计，由于游戏用的引擎的设计是为了输出到60hz的屏幕刷新率的，
@@ -556,8 +634,8 @@ set to 60hz. The render speed of Panda3D is limited under this rate. Due to this
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline28" class="outline-5">
-<h5 id="orgheadline28"><span class="section-number-5">4.2.4.2</span> Data Transmission between Video RAM and Main RAM</h5>
+<div id="outline-container-orgheadline36" class="outline-5">
+<h5 id="orgheadline36"><span class="section-number-5">4.2.4.2</span> Data Transmission between Video RAM and Main RAM</h5>
 <div class="outline-text-5" id="text-4-2-4-2">
 <p>
 另一个问题相对来说造成的影响比较小一些，这是上面提到的数据传递问题的衍生。
@@ -568,8 +646,8 @@ set to 60hz. The render speed of Panda3D is limited under this rate. Due to this
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline29" class="outline-5">
-<h5 id="orgheadline29"><span class="section-number-5">4.2.4.3</span> Time Record / 时间记录</h5>
+<div id="outline-container-orgheadline37" class="outline-5">
+<h5 id="orgheadline37"><span class="section-number-5">4.2.4.3</span> Time Record / 时间记录</h5>
 <div class="outline-text-5" id="text-4-2-4-3">
 <p>
 我们记录了大致上在不同的环节会被消耗的时间：
@@ -578,8 +656,8 @@ set to 60hz. The render speed of Panda3D is limited under this rate. Due to this
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline34" class="outline-3">
-<h3 id="orgheadline34"><span class="section-number-3">4.3</span> Collision Detection</h3>
+<div id="outline-container-orgheadline42" class="outline-3">
+<h3 id="orgheadline42"><span class="section-number-3">4.3</span> Collision Detection</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 %虚拟环境需要在agent碰撞的时候给予惩罚,所以我们需要一个碰撞检测程序
@@ -588,8 +666,8 @@ Collision detection is normally a part of a physics engine and
 there are several physics engines integrated within Panda3D.  
 </p>
 </div>
-<div id="outline-container-orgheadline32" class="outline-4">
-<h4 id="orgheadline32"><span class="section-number-4">4.3.1</span> Panda3D Built-In</h4>
+<div id="outline-container-orgheadline40" class="outline-4">
+<h4 id="orgheadline40"><span class="section-number-4">4.3.1</span> Panda3D Built-In</h4>
 <div class="outline-text-4" id="text-4-3-1">
 <p>
 %我们使用了Panda3D中内置的物理引擎帮助做碰撞检测
@@ -610,8 +688,8 @@ in a bird's-eye view.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline33" class="outline-4">
-<h4 id="orgheadline33"><span class="section-number-4">4.3.2</span> Bullet</h4>
+<div id="outline-container-orgheadline41" class="outline-4">
+<h4 id="orgheadline41"><span class="section-number-4">4.3.2</span> Bullet</h4>
 <div class="outline-text-4" id="text-4-3-2">
 <p>
 %因此我们尝试了第二个物理引擎bullet,bullet可以通过三维模型数据直接生成对应的物理实体描述，
@@ -649,8 +727,8 @@ geometries.
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline35" class="outline-3">
-<h3 id="orgheadline35"><span class="section-number-3">4.4</span> Avoiding Obstacles</h3>
+<div id="outline-container-orgheadline43" class="outline-3">
+<h3 id="orgheadline43"><span class="section-number-3">4.4</span> Avoiding Obstacles</h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 我们首先要考虑的问题是如何学习避障。我们使用一个和dqn类似的体系。和dqn面对的游戏环境不同的是，在避障问题中，唯一的事件信号是碰撞。除此以外，，虚拟环境不会
@@ -673,8 +751,8 @@ geometries.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline36" class="outline-3">
-<h3 id="orgheadline36"><span class="section-number-3">4.5</span> Reward Rules</h3>
+<div id="outline-container-orgheadline44" class="outline-3">
+<h3 id="orgheadline44"><span class="section-number-3">4.5</span> Reward Rules</h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 对于奖励的设置，由于碰撞是唯一的虚拟环境可以识别的信号，所以reward的设定主要在于存在碰撞的情况下，和不存在碰撞的情况下
@@ -682,8 +760,8 @@ geometries.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline37" class="outline-3">
-<h3 id="orgheadline37"><span class="section-number-3">4.6</span> Depth Map</h3>
+<div id="outline-container-orgheadline45" class="outline-3">
+<h3 id="orgheadline45"><span class="section-number-3">4.6</span> Depth Map</h3>
 <div class="outline-text-3" id="text-4-6">
 <p>
 我们在训练中给予神经网络的输入是深度图像，而不是直接的图像输出。选择深度图像的原因，
@@ -696,8 +774,8 @@ geometries.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline38" class="outline-3">
-<h3 id="orgheadline38"><span class="section-number-3">4.7</span> Histroy Data</h3>
+<div id="outline-container-orgheadline46" class="outline-3">
+<h3 id="orgheadline46"><span class="section-number-3">4.7</span> Histroy Data</h3>
 <div class="outline-text-3" id="text-4-7">
 <p>
 我们使用和dqn中一样的历史记录，和dqn面对的问题不同的是，在dqn场景中的游戏中，agent一般在游戏开始的时候，它的起始状态并不是完全随机的。在后续的行为选择中，
@@ -724,8 +802,8 @@ geometries.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline39" class="outline-3">
-<h3 id="orgheadline39"><span class="section-number-3">4.8</span> Overfitting and Data Augmentation</h3>
+<div id="outline-container-orgheadline47" class="outline-3">
+<h3 id="orgheadline47"><span class="section-number-3">4.8</span> Overfitting and Data Augmentation</h3>
 <div class="outline-text-3" id="text-4-8">
 <p>
 由于之前提到过的虚拟环境的性能问题的原因，生成新的图片的速度比使用这些图片进行训练的速度慢很多，
@@ -744,8 +822,8 @@ resize的问题是，被resize的一些列phi，相当于把agent放入了一个
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline40" class="outline-3">
-<h3 id="orgheadline40"><span class="section-number-3">4.9</span> Ensemble</h3>
+<div id="outline-container-orgheadline48" class="outline-3">
+<h3 id="orgheadline48"><span class="section-number-3">4.9</span> Ensemble</h3>
 <div class="outline-text-3" id="text-4-9">
 <p>
 ensemble组合输出结果
@@ -753,16 +831,16 @@ ensemble组合输出结果
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline41" class="outline-3">
-<h3 id="orgheadline41"><span class="section-number-3">4.10</span> Short Term Memory?</h3>
+<div id="outline-container-orgheadline49" class="outline-3">
+<h3 id="orgheadline49"><span class="section-number-3">4.10</span> Short Term Memory?</h3>
 <div class="outline-text-3" id="text-4-10">
 <p>
 我们没有使用lstm这样的记忆单元，phi的长度也只有２，由于我们没有允许agent后退，所以视野外的障碍物对agent的影响不是很大，因此没有短时记忆，造成的影响也不大
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline42" class="outline-3">
-<h3 id="orgheadline42"><span class="section-number-3">4.11</span> Network Architecture</h3>
+<div id="outline-container-orgheadline50" class="outline-3">
+<h3 id="orgheadline50"><span class="section-number-3">4.11</span> Network Architecture</h3>
 <div class="outline-text-3" id="text-4-11">
 <p>
 在我们的问题中的一个问题是马克夫链太长了。我这里就先不多说了，具体书上查一下类似的描述
@@ -796,8 +874,8 @@ ensemble组合输出结果
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline43" class="outline-3">
-<h3 id="orgheadline43"><span class="section-number-3">4.12</span> Navigation</h3>
+<div id="outline-container-orgheadline51" class="outline-3">
+<h3 id="orgheadline51"><span class="section-number-3">4.12</span> Navigation</h3>
 <div class="outline-text-3" id="text-4-12">
 <p>
 我们假设有一个目标对象，会不断发出信号，agent可以由此判断目标地点的相对自己的方位。
@@ -1690,8 +1768,8 @@ tloss从0.062到0.058的时候,vloss从0.069提到了0.063,平方根是:
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline44" class="outline-3">
-<h3 id="orgheadline44"><span class="section-number-3">4.13</span> Reward Rules</h3>
+<div id="outline-container-orgheadline52" class="outline-3">
+<h3 id="orgheadline52"><span class="section-number-3">4.13</span> Reward Rules</h3>
 <div class="outline-text-3" id="text-4-13">
 <p>
 如果agent在某处停留很久,那么我们就假设它在那里停留到永远,
@@ -1710,8 +1788,8 @@ tloss从0.062到0.058的时候,vloss从0.069提到了0.063,平方根是:
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline45" class="outline-3">
-<h3 id="orgheadline45"><span class="section-number-3">4.14</span> Network Architecture</h3>
+<div id="outline-container-orgheadline53" class="outline-3">
+<h3 id="orgheadline53"><span class="section-number-3">4.14</span> Network Architecture</h3>
 <div class="outline-text-3" id="text-4-14">
 <p>
 ×××××××××××××××××××××××
@@ -1719,15 +1797,15 @@ tloss从0.062到0.058的时候,vloss从0.069提到了0.063,平方根是:
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline48" class="outline-2">
-<h2 id="orgheadline48"><span class="section-number-2">5</span> Reinforcement Learning</h2>
+<div id="outline-container-orgheadline56" class="outline-2">
+<h2 id="orgheadline56"><span class="section-number-2">5</span> Reinforcement Learning</h2>
 <div class="outline-text-2" id="text-5">
-</div><div id="outline-container-orgheadline47" class="outline-3">
-<h3 id="orgheadline47"><span class="section-number-3">5.1</span> Deep Q Learning</h3>
+</div><div id="outline-container-orgheadline55" class="outline-3">
+<h3 id="orgheadline55"><span class="section-number-3">5.1</span> Deep Q Learning</h3>
 </div>
 </div>
-<div id="outline-container-orgheadline49" class="outline-2">
-<h2 id="orgheadline49"><span class="section-number-2">6</span> Other Works in Obstacle Avoidance</h2>
+<div id="outline-container-orgheadline57" class="outline-2">
+<h2 id="orgheadline57"><span class="section-number-2">6</span> Other Works in Obstacle Avoidance</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 RL是一个AI中活跃的研究领域，研究如何让agent在与复杂环境交互中获得最大奖励，
@@ -1778,14 +1856,14 @@ RL的方程 q value
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline52" class="outline-2">
-<h2 id="orgheadline52"><span class="section-number-2">7</span> Function Merging</h2>
+<div id="outline-container-orgheadline60" class="outline-2">
+<h2 id="orgheadline60"><span class="section-number-2">7</span> Function Merging</h2>
 <div class="outline-text-2" id="text-7">
-</div><div id="outline-container-orgheadline50" class="outline-3">
-<h3 id="orgheadline50"><span class="section-number-3">7.1</span> Network Architecture</h3>
+</div><div id="outline-container-orgheadline58" class="outline-3">
+<h3 id="orgheadline58"><span class="section-number-3">7.1</span> Network Architecture</h3>
 </div>
-<div id="outline-container-orgheadline51" class="outline-3">
-<h3 id="orgheadline51"><span class="section-number-3">7.2</span> Pretrained Models</h3>
+<div id="outline-container-orgheadline59" class="outline-3">
+<h3 id="orgheadline59"><span class="section-number-3">7.2</span> Pretrained Models</h3>
 <div class="outline-text-3" id="text-7-2">
 <p>
 我们打算使用
@@ -1793,14 +1871,14 @@ RL的方程 q value
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline53" class="outline-2">
-<h2 id="orgheadline53"><span class="section-number-2">8</span> Experiments</h2>
+<div id="outline-container-orgheadline61" class="outline-2">
+<h2 id="orgheadline61"><span class="section-number-2">8</span> Experiments</h2>
 </div>
-<div id="outline-container-orgheadline55" class="outline-2">
-<h2 id="orgheadline55"><span class="section-number-2">9</span> Conclusions</h2>
+<div id="outline-container-orgheadline63" class="outline-2">
+<h2 id="orgheadline63"><span class="section-number-2">9</span> Conclusions</h2>
 <div class="outline-text-2" id="text-9">
-</div><div id="outline-container-orgheadline54" class="outline-3">
-<h3 id="orgheadline54"><span class="section-number-3">9.1</span> {Future}</h3>
+</div><div id="outline-container-orgheadline62" class="outline-3">
+<h3 id="orgheadline62"><span class="section-number-3">9.1</span> {Future}</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 未来的工作？我们 
@@ -1826,7 +1904,7 @@ RL的方程 q value
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-08-08 Mon 06:08</p>
+<p class="date">Created: 2016-08-08 Mon 06:41</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
