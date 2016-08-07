@@ -5,8 +5,11 @@
 * Progress History / 项目进度
 ** Inspiration / 启发
 *** DQN算法
+    这是一个混合了深度学习(deep learning)中的卷积网络(convolutional)和强化学习(reinforcement learning)中的q learning的算法.
     - Paper :: http://arxiv.org/abs/1312.5602
     - Code :: https://github.com/spragunr/deep_q_rl
+**** 特征 
+     和一般q learning的差别是dqn会记录历史数据,并用历史数据进行训练.而普通的q learning算法使用实时数据进行训练的.
 *** 小车避障视频
     - https://www.youtube.com/watch?v=zOgSC---rgM
     这个视频是驱动我做这个项目的主要因素.
@@ -26,32 +29,38 @@
 ** Reimplementation / 重现视频所实现的东西
    由于我们没有视频中的程序的代码,我们要做的第一件事情,就是重现视频中的场景,
    训练一个agent在一个类似的二维空间中学会避障.
+*** 虚拟环境
+    由于我们的最终目标是训练agent学会在三维空间中避障.
+    因此,出于便利性的考虑,我们在这个阶段已经完成了三维虚拟环境(Figure [[fig:shot-stereo]]),
+    但是在算法中仍然将其视作一个二维空间,模拟成视频中的场景
+
+    具体的方法是,
+    1. 首先,根据场景内的三维模型生成深度信息(https://en.wikipedia.org/wiki/Depth_map) (Figure [[fig:shot-depth]]).
+    2. 然后,截取地平线的部分(Figure [[fig:shot-depth-1d]]),作为对视频中的一维距离信息的模拟,发送给agent
+    3. 在场景中,当agent遇到障碍物的时候,场景会发送惩罚信号给agent.
+     
+    #+CAPTION: agent视角的虚拟三维环境,通过三维引擎的立体视觉模式加入了左右两个视角
+    #+ATTR_LATEX: :width 10cm
+    #+NAME:   fig:shot-stereo
+    file:images/screenshot/stereo.png
+
+    #+CAPTION: 通过三维引擎直接生成的深度信息
+    #+ATTR_LATEX: :width 5cm
+    #+NAME:   fig:shot-depth
+    file:images/screenshot/depth.png
+
+    #+CAPTION: 截取地平线的部分生成一维的深度信息
+    #+ATTR_LATEX: :width 5cm 
+    #+NAME:   fig:shot-depth-1d
+    file:images/screenshot/depth_1d.png
+*** 连接虚拟环境和DQN算法
+    原本的github上的DQN程序是和Atari模拟器对接的.
+    在完成了虚拟环境之后,我们使用这个虚拟环境替换掉了Atari模拟器.
    
-   由于我们的最终目标是训练agent学会在三维空间中避障.
-   因此,出于便利性的考虑,我们在这个阶段已经完成了三维虚拟环境(Figure [[fig:shot-stereo]]),
-
-   但是在算法中仍然将其视作一个二维空间,模拟成视频中的场景
+    原视频中使用的应该是相对DQN来说较为简单普通的q learning算法.
+   
+    之后我们调节参数训练agent,kkkkkkkk
  
-   具体的方法是,
-   1. 首先,根据场景内的三维模型生成深度信息(https://en.wikipedia.org/wiki/Depth_map) (Figure [[fig:shot-depth]]).
-   2. 然后,截取地平线的部分(Figure [[fig:shot-depth-1d]]),作为对视频中的一维距离信息的模拟,发送给agent
-   3. 在场景中,当agent遇到障碍物的时候,场景会发送惩罚信号给agent.
-      
-   #+CAPTION: agent视角的虚拟三维环境,通过三维引擎的立体视觉模式加入了左右两个视角
-   #+ATTR_LATEX: :width 10cm 
-   #+NAME:   fig:shot-stereo
-   file:images/screenshot/stereo.png
-
-   #+CAPTION: 通过三维引擎直接生成的深度信息
-   #+ATTR_LATEX: :width 5cm 
-   #+NAME:   fig:shot-depth
-   file:images/screenshot/depth.png
-
-   #+CAPTION: 截取地平线的部分生成一维的深度信息
-   #+ATTR_LATEX: :width 5cm 
-   #+NAME:   fig:shot-depth-1d
-   file:images/screenshot/depth_1d.png
-
 * Introduction
   介绍下我们要处理的问题是什么，
   我们研究的是，在一个模拟的环境中，让agent学会在避开障碍物的情况下能够自行找到一个指定的目标。我们会使用RL算法来训练agent.
