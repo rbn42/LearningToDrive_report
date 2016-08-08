@@ -80,18 +80,32 @@
      存在着通过双视角和单视角计算Depth Map的方法(文献),其中双视角比单视角高效.我们使用了opencv内置的算法,但是很可惜输出结果不够理想,没能很好的给出障碍物的距离.
 **** 直接通过三维引擎获取Depth Map
      在虚拟环境中,通过原本的三维模型,可以计算出最完美的depth map.这在现实中是做不到的的.我们希望确认,至少通过最完美的Depth Map,可以训练出较好的结果.
-*** 结果
-    训练结果基本接近于二维的情形.
+**** 结果
+     训练结果基本接近于二维的情形.
      
-    #+CAPTION: 这是agent一次的行走记录,红色表示障碍物,黄色表示出发地,蓝色表示行走路线
-    #+ATTR_LATEX: :width 5cm
-    #+NAME:   fig:result-sample_random_depth
-    file:images/screenshot/result_sample_random_depth.png
+     #+CAPTION: 这是agent一次随机行走记录,红色表示障碍物,黄色表示出发地,蓝色表示行走路线
+     #+ATTR_LATEX: :width 5cm
+     #+NAME:   fig:result-sample_random_depth
+     file:images/screenshot/result_sample_random_depth.png
+
+*** 允许agent在三维空间活动
+    因为对比文献中已有的结果来说,在二维的平面上活动的agent仅仅只需要地平线部分距离信息就足以学会避障了,而扩大输入到整个二维的depth map只是增加了不必要的输入.因为不必要的新特征的存在,带来了overfitting的可能性.
+
+    相当于是为了证明使用二维的depth map的价值,我们尝试允许让agent在三维空间中活动,这样仅仅使用一维的地平线数据作为输入就不够帮助agent做出正确的避障行为判断了.
+    
+    最后的训练结果是失败的,但是追查原因发现是因为我们使用的物理引擎在处理三维空间的时候的精度不够,在没有碰撞的时候给出碰撞信号,或是相反,因此agent提供了大量的错误训练数据.
+
+    物理引擎的精确性问题最后没能修正,所以我们只能放弃再三维空间中训练agent了.
+     
+     #+CAPTION: 三维空间中活动的agent视角的截图,物体周围的轮廓线表示了物理引擎实际进行碰撞检测计算的几何体.
+     #+ATTR_LATEX: :width 5cm
+     #+NAME:   fig:sample_3denv
+     file:images/screenshot/sample_3denv.png
+
 
 ** 目标导航
 *** 深度信息 / Depth Map
 **** 结果
-
     #+CAPTION: 使用depth map进行导航,绿色表示目标区域
     #+ATTR_LATEX: :width 5cm
     #+NAME:   fig:result-sample_nav_depth
