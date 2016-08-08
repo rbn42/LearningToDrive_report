@@ -82,7 +82,7 @@
      在虚拟环境中,通过原本的三维模型,可以计算出最完美的depth map.这在现实中是做不到的的.我们希望确认,至少通过最完美的Depth Map,可以训练出较好的结果.
 **** 结果
      训练结果基本接近于二维的情形.
-     
+     Figure [[fig:result-sample_random_depth]]
      #+CAPTION: 这是agent一次随机行走记录,红色表示障碍物,黄色表示出发地,蓝色表示行走路线
      #+ATTR_LATEX: :width 5cm
      #+NAME:   fig:result-sample_random_depth
@@ -96,6 +96,7 @@
     最后的训练结果是失败的,但是追查原因发现是因为我们使用的物理引擎在处理三维空间的时候的精度不够,在没有碰撞的时候给出碰撞信号,或是相反,因此agent提供了大量的错误训练数据.
 
     物理引擎的精确性问题最后没能修正,所以我们只能放弃再三维空间中训练agent了.
+    Figure [[fig:sample_3denv]]
      
      #+CAPTION: 三维空间中活动的agent视角的截图,物体周围的轮廓线表示了物理引擎实际进行碰撞检测计算的几何体.
      #+ATTR_LATEX: :width 5cm
@@ -106,6 +107,7 @@
 ** 目标导航
 *** 深度信息 / Depth Map
 **** 结果
+     Figure [[fig:result-sample_nav_depth]]
     #+CAPTION: 使用depth map进行导航,绿色表示目标区域
     #+ATTR_LATEX: :width 5cm
     #+NAME:   fig:result-sample_nav_depth
@@ -114,7 +116,7 @@
     我记得把深度图替换成真是图像这个步骤我并没有在训练随机行为避障的时候实现,而是在实现了导航之后再做的.因为最初没有预期这是能够做到的.
     在确认了通过深度信息也能学会导航之后,我们开始测试,确认了,直接通过真实图像就能够做到让agent学会导航.
 **** 结果
-
+     Figure [[fig:result-sample_nav_raw]]
     #+CAPTION: 使用真实图像进行导航
     #+ATTR_LATEX: :width 5cm
     #+NAME:   fig:result-sample_nav_raw
