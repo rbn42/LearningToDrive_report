@@ -104,7 +104,7 @@
     #+CAPTION: 使用真实图像进行导航
     #+ATTR_LATEX: :width 5cm
     #+NAME:   fig:result-sample_nav_raw
-    file:images/screenshot/result_sample_nav_raw.jpg
+    file:images/screenshot/result_sample_nav_raw.png
 
 **** 问题 
      我们无法确保agent学会的能力是泛用的,即不仅仅在训练其的虚拟环境中适用,也能在未知环境中适用.
