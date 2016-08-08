@@ -75,18 +75,41 @@
     由于在视频中,agent接收的信息是一维的障碍物距离.对应到三维环境中就是二维的障碍物距离,也就是Depth Map.
     由于我们已知通过一维的障碍物距离进行训练是一个有效的办法,类推用二维距离信息也可能是有效的.
 **** TODO Finetune
-     有一些计算Depth Map的算法是基于神经网络的.所以我们原本打算,如果使用这样的算法,可以连同其和DQN中的神经网络一起做后期finetune进一步提升性能.
+     有一些计算Depth Map的算法是基于神经网络的.所以我们原本打算,如果使用这样的算法,可以在后期,将depthmap的神经网络加入到DQN中一起finetune优化,进一步提升性能.
 **** 通过双视角图像计算Depth Map
-     存在着通过双视角和单视角计算Depth Map的方法(文献),其中双视角比单视角高效.我们使用了opencv内置的算法,但是很可惜输出结果不够理想.
+     存在着通过双视角和单视角计算Depth Map的方法(文献),其中双视角比单视角高效.我们使用了opencv内置的算法,但是很可惜输出结果不够理想,没能很好的给出障碍物的距离.
 **** 直接通过三维引擎获取Depth Map
-     这是一个有点接近作弊的方案,因为这只有在虚拟环境中,我们掌握着三维模型的情况下才能得到.但是使用这个办法可以得到完美的Depth Map.我们希望确认,至少通过最完美的Depth Map,可以训练出较好的结果.
+     在虚拟环境中,通过原本的三维模型,可以计算出最完美的depth map.这在现实中是做不到的的.我们希望确认,至少通过最完美的Depth Map,可以训练出较好的结果.
+*** 结果
+    训练结果基本接近于二维的情形.
+     
+    #+CAPTION: 这是agent一次的行走记录,红色表示障碍物,黄色表示出发地,蓝色表示行走路线
+    #+ATTR_LATEX: :width 5cm
+    #+NAME:   fig:result-sample_random_depth
+    file:images/screenshot/result_sample_random_depth.png
+
+** 目标导航
+*** 深度信息 / Depth Map
+**** 结果
+
+    #+CAPTION: 使用depth map进行导航,绿色表示目标区域
+    #+ATTR_LATEX: :width 5cm
+    #+NAME:   fig:result-sample_nav_depth
+    file:images/screenshot/result_sample_nav_depth.png
 *** 真实图像 / Raw Image
-    在确认了通过深度信息也能学会避障之后,我们开始测试,确认了,直接通过真实图像就能够做到让agent学会避障.
+    我记得把深度图替换成真是图像这个步骤我并没有在训练随机行为避障的时候实现,而是在实现了导航之后再做的.因为最初没有预期这是能够做到的.
+    在确认了通过深度信息也能学会导航之后,我们开始测试,确认了,直接通过真实图像就能够做到让agent学会导航.
+**** 结果
+
+    #+CAPTION: 使用真实图像进行导航
+    #+ATTR_LATEX: :width 5cm
+    #+NAME:   fig:result-sample_nav_raw
+    file:images/screenshot/result_sample_nav_raw.jpg
+
 **** 问题 
      我们无法确保agent学会的能力是泛用的,即不仅仅在训练其的虚拟环境中适用,也能在未知环境中适用.
      推测在使用Depth Map的情况下,神经网络只需要收敛到一个能够判断哪个转向反向的障碍物更遥远的函数,这样的函数的适用性应该是比较广的.
      但是在使用真实图像的时候,可能k就
-** 目标导航
 * Introduction
   介绍下我们要处理的问题是什么，
   我们研究的是，在一个模拟的环境中，让agent学会在避开障碍物的情况下能够自行找到一个指定的目标。我们会使用RL算法来训练agent.
