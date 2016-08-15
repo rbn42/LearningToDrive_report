@@ -28,10 +28,16 @@
 - 引用 :: http://dl.acm.org/citation.cfm?id=1102426
 - Pdf :: http://machinelearning.wustl.edu/mlpapers/paper_files/icml2005_MichelsSN05.pdf
 ** Reimplementation / 重现视频所实现的东西
-   # 忘掉deadline开始写,放轻松
-   由于我们没有视频中的程序的代码,我们要做的第一件事情,
-   就是重现视频中的场景,
-   训练一个agent在一个类似的二维空间中学会避障.
+*** 
+    # 忘掉deadline开始写,放轻松
+    # 单纯说要写可能不知道写什么,所以这里应该需要给自己一个问题.
+    # 问题是什么?
+    # 我们做了什么?
+    # 
+*** 
+    由于我们没有视频中的程序的代码,我们要做的第一件事情,
+    就是重现视频中的场景,
+    训练一个agent在一个类似的二维空间中学会避障.
 *** 虚拟环境
     由于我们的最终目标是训练agent学会在三维空间中避障.
     因此,出于便利性的考虑,我们在这个阶段已经完成了三维虚拟环境(Figure [[fig:shot-stereo]]),
