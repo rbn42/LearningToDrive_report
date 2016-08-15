@@ -28,23 +28,25 @@
 - 引用 :: http://dl.acm.org/citation.cfm?id=1102426
 - Pdf :: http://machinelearning.wustl.edu/mlpapers/paper_files/icml2005_MichelsSN05.pdf
 ** Reimplementation / 重现视频所实现的东西
-   由于我们没有视频中的程序的代码,我们要做的第一件事情,就是重现视频中的场景,
+   # 忘掉deadline开始写,放轻松
+   由于我们没有视频中的程序的代码,我们要做的第一件事情,
+   就是重现视频中的场景,
    训练一个agent在一个类似的二维空间中学会避障.
 *** 虚拟环境
     由于我们的最终目标是训练agent学会在三维空间中避障.
     因此,出于便利性的考虑,我们在这个阶段已经完成了三维虚拟环境(Figure [[fig:shot-stereo]]),
     但是在算法中仍然将其视作一个二维空间,模拟成视频中的场景
-
+    
     具体的方法是,
     1. 首先,根据场景内的三维模型生成深度信息(https://en.wikipedia.org/wiki/Depth_map) (Figure [[fig:shot-depth]]).
     2. 然后,截取地平线的部分(Figure [[fig:shot-depth-1d]]),作为对视频中的一维距离信息的模拟,发送给agent
     3. 在场景中,当agent遇到障碍物的时候,场景会发送惩罚信号给agent.
-     
+    
     #+CAPTION: agent视角的虚拟三维环境,通过三维引擎的立体视觉模式加入了左右两个视角
     #+ATTR_LATEX: :width 10cm
     #+NAME:   fig:shot-stereo
     file:images/screenshot/stereo.png
-
+    
     #+CAPTION: 通过三维引擎直接生成的深度信息
     #+ATTR_LATEX: :width 5cm
     #+NAME:   fig:shot-depth
