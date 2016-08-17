@@ -25,8 +25,8 @@
     以及撞击惩罚,来训练一个agent/机器人/小车学会避开障碍物.
 **** 相关文献
      之后我在文献中找到了一个相近的实现
-- 引用 :: http://dl.acm.org/citation.cfm?id=1102426
-- Pdf :: http://machinelearning.wustl.edu/mlpapers/paper_files/icml2005_MichelsSN05.pdf
+     - 引用 :: http://dl.acm.org/citation.cfm?id=1102426
+     - Pdf :: http://machinelearning.wustl.edu/mlpapers/paper_files/icml2005_MichelsSN05.pdf
 ** Reimplementation / 重现视频所实现的东西
 *** 杂 :noexport:
     - 忘掉deadline开始写,放轻松
@@ -49,6 +49,8 @@
 	为了确保正确的编写出别人的方法,那么我们就应该实现别人的结果.
 	以此,你可以确保,你在编写别人的方法的过程中,是无错的.
       - 手段
+      然后我的思考就停住了,心里没有想法了,没有目标.
+      那么怎么找回目标?下一个目标是什么?
 *** 
     由于我们没有视频中的程序的代码,我们要做的第一件事情,
     就是重现视频中的场景,
