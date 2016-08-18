@@ -1,0 +1,28 @@
+#+OPTIONS: H:7
+#+LaTeX_CLASS: thesiszh
+#+TITLE: My little document
+
+* root
+** The video
+ https://www.youtube.com/watch?v=zOgSC---rgM
+
+ The video illustrates a car learning to avoid obstacles. As shown in the Figure, the environment is a 2D scenario. The whole scenario is surrounded by fences. There are 4 irregularly shaped obstacles. To show the learned ability generalizes well with different layouts of obstacles, the obstacles will revolve about the center of the room slowly, at a constant speed, during the runtime.
+ For each period, the car starts from the center of the room, with a randomly chosen direction. Its action is controlled by a reinforcement learning algorithm. During the early periods, the actions are like randomly decided. When the car runs into obstacles or fences, it will be repositioned to the center of the room, and a new period begins. The car learns over time.
+
+ The illustration comprises two parts, a 2D environment described above, and a learning algorithm which controls the action of the car. The algorithm learns from and makes decisions on specified data provided by the environment. The environment emulates 5 state sensors, corresponding to 5 different direction in front of the car. These sensors find the nearest obstacle, and measure the distance from the obstacle to the car. The distance information is transferred to the car in the form of a 5D vector. In the runtime, the algorithm predicts an action on the distance information and feed it back to the environment. 
+
+** reimplementation
+    
+   #+CAPTION: structure
+   #+ATTR_LATEX: :width 10cm
+   #+NAME:   fig:reimplementation_structure
+   file:images/reimplementation_structure.png
+ 
+   It includes 3 steps.
+   - Build an environment.
+   - Implement a reinforcement learning algorithm to control the car.
+   - Transfer learning data and actions between the environment and the algorithm.
+
+   We choose to build the environment on a 3D rendering engine. 
+   It is for convenience.
+   Because our later goal is to make an agent to be able to learn to avoid obstacles in 3D environments. 
