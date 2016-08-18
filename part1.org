@@ -12,18 +12,13 @@
  #+NAME:   fig:youtube_screenshot
  file:images/youtube_screenshot.png
   
- #+CAPTION: youtube_structure
- #+ATTR_LATEX: :width 10cm
- #+NAME:   fig:youtube_structure
- file:images/youtube_structure.png
-    
  The video illustrates a car learning to avoid obstacles. 
  As shown in Figure [[fig:youtube_screenshot]], the environment is a 2D scenario.
  The whole scenario is surrounded by fences.
  There are 4 irregularly shaped obstacles.
  To show the learned ability generalizes well with different layouts of obstacles,
  the obstacles will revolve about the center of the room slowly,
- at a constant speed, during the runtime.
+ at a constant speed, during running.
 
  For each period, the car starts from the center of the room,
  with a randomly chosen direction.
@@ -33,6 +28,11 @@
  it will be repositioned to the center of the room, and a new period begins.
  The car learns over time.
  
+ #+CAPTION: youtube_structure
+ #+ATTR_LATEX: :width 10cm
+ #+NAME:   fig:youtube_structure
+ file:images/youtube_structure.png
+    
  The illustration comprises two parts, a 2D environment described above,
  and a learning algorithm which controls the action of the car.
  The algorithm learns from and makes decisions on specified data provided by the environment.
@@ -44,7 +44,7 @@
  During running, the algorithm will predict an action based on the distance information 
  and then feed it back to the environment, to control the movement of the car. 
  
-** reimplementation
+** Re-Implementation
     
    #+CAPTION: structure
    #+ATTR_LATEX: :width 10cm
@@ -56,6 +56,70 @@
    - Implement a reinforcement learning algorithm to control the car.
    - Transfer learning data and actions between the environment and the algorithm.
 
-   We choose to build the environment on a 3D rendering engine. 
-   It is for convenience.
-   Because our later goal is to make an agent to be able to learn to avoid obstacles in 3D environments. 
+*** The Environment
+   We choose to build this 2D environment on a 3D rendering engine. 
+   It is for the convenience of later transition.
+   Because our later goal is to train the car to avoid obstacles in 3D environments. 
+**** Panda3D 
+*** Learning Data
+* 
+Figure 1.4 A 3D view
+                        A cube room. A (round) pole at the left bottom corner. Another (square) pole at the top right
+                        Randomly positioned chess pieces (200-400) (maybe overlapped)
+ 
+ 
+ 
+ 
+Figure 2D view (mark the poles)
+(Green circle/blue lines remove later)
+Different Red shapes are obstacles
+Green destination(remove)
+Blue line routes (remove)
+由于我们的最终目标是训练agent学会在三维空间中避障. 因此,出于便利性的考虑,我们在这个阶段已经完成了三维虚拟环境(Figure 1), 但是在算法中仍然将其视作一个二维空间,模拟成视频中的场景
+ 
+ 
+·         Extracting depth maps (
+Goal: E (distance) => Q )
+Convenient Method: depth map => distance
+首先,根据场景内的三维模型生成深度信息(https://en.wikipedia.org/wiki/Depth_map) (Figure 2).
+What is depth map? Figure ???
+How to generate from 3d models
+How to extract distance from depth map. Figure ???
+ 
+然后,截取地平线的部分(Figure 3),作为对视频中的一维距离信息的模拟,发送给agent
+在场景中,当agent遇到障碍物的时候,场景会发送惩罚信号给agent.
+Figure 1: agent视角的虚拟三维环境,通过三维引擎的立体视觉模式加入了左右两个视角
+Figure 2: depth map generated from 3d models
+Figure 3: 截取地平线的部分生成一维的深度信息
+o   Reimplement q-learning
+o   Feeding distance to q-learning
+Different Implementaion
+o   Data: volume??
+ 
+o   Results and discussion:
+o   在满是障碍物的地图上,agent很明显的可以在较长的一段时间中避开障碍物. 但是并不能做到在所以情形下完全避开障碍物.
+o   1.2.5.1 问题
+o   我们缺乏有效的指标判断训练结果的有效性. 障碍物地图是随机生成的,有些情况下agent可能陷入无法避开障碍物的情形.但是我们缺乏手段评估哪些障碍物环境是属于这一类别的.
+o   在参数调整的后期,很难根据agent不碰撞的时间长度来判断算法的优劣
+ 
+ 
+连接虚拟环境和DQN算法
+原本的github上的DQN程序是和Atari模拟器对接的. 在完成了虚拟环境之后,我们使用这个虚拟环境替换掉了Atari模拟器. 由于输入从Atari的二维画面转换成了一维的距离信息,我们也把DQN中的cnn替换成了普通的多层神经网络.
+1.2.4 训练
+1.2.4.1 随机行为
+一般的强化学习算法一样,最初阶段agent的行为是被设定为随机的,以此来积累周围环境的知识.
+
+·        Q learning
+Describe:
+·        illustrated in Figure 1.2: from youtube
+ Action 
+Action value function
+
+
+
+     
+         Figure 1.2
+Describe the method used in the video
+  
+
+    
