@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-08-19 Fri 09:20 -->
+<!-- 2016-08-19 Fri 09:46 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>My little document</title>
@@ -147,43 +147,87 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline1">1. The video</a></li>
-<li><a href="#orgheadline2">2. reimplementation</a></li>
+<li><a href="#orgheadline3">1. root</a>
+<ul>
+<li><a href="#orgheadline1">1.1. The video</a></li>
+<li><a href="#orgheadline2">1.2. reimplementation</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
-
-<div id="outline-container-orgheadline1" class="outline-2">
-<h2 id="orgheadline1"><span class="section-number-2">1</span> The video</h2>
+<div id="outline-container-orgheadline3" class="outline-2">
+<h2 id="orgheadline3"><span class="section-number-2">1</span> root</h2>
 <div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1"><span class="section-number-3">1.1</span> The video</h3>
+<div class="outline-text-3" id="text-1-1">
 <p>
 <a href="https://www.youtube.com/watch?v=zOgSC---rgM">https://www.youtube.com/watch?v=zOgSC---rgM</a>
 </p>
 
-<p>
-The video illustrates a car learning to avoid obstacles. As shown in the Figure, the environment is a 2D scenario. The whole scenario is surrounded by fences. There are 4 irregularly shaped obstacles. To show the learned ability generalizes well with different layouts of obstacles, the obstacles will revolve about the center of the room slowly, at a constant speed, during the runtime.
-For each period, the car starts from the center of the room, with a randomly chosen direction. Its action is controlled by a reinforcement learning algorithm. During the early periods, the actions are like randomly decided. When the car runs into obstacles or fences, it will be repositioned to the center of the room, and a new period begins. The car learns over time.
-</p>
-
-<p>
-The illustration comprises two parts, a 2D environment described above, and a learning algorithm which controls the action of the car. The algorithm learns from and makes decisions on specified data provided by the environment. The environment emulates 5 state sensors, corresponding to 5 different direction in front of the car. These sensors find the nearest obstacle, and measure the distance from the obstacle to the car. The distance information is transferred to the car in the form of a 5D vector. In the runtime, the algorithm predicts an action on the distance information and feed it back to the environment. 
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgheadline2" class="outline-2">
-<h2 id="orgheadline2"><span class="section-number-2">2</span> reimplementation</h2>
-<div class="outline-text-2" id="text-2">
 
 <div id="orgparagraph1" class="figure">
-<p><img src="images/reimplementation_structure.png" alt="reimplementation_structure.png" />
+<p><img src="images/youtube_screenshot.png" alt="youtube_screenshot.png" />
 </p>
-<p><span class="figure-number">Figure 1:</span> structure</p>
+<p><span class="figure-number">Figure 1:</span> youtube<sub>screenshot</sub></p>
+</div>
+
+
+<div id="orgparagraph2" class="figure">
+<p><img src="images/youtube_structure.png" alt="youtube_structure.png" />
+</p>
+<p><span class="figure-number">Figure 2:</span> youtube<sub>structure</sub></p>
 </div>
 
 <p>
-It includes 3 steps
+The video illustrates a car learning to avoid obstacles. 
+As shown in Figure <a href="#orgparagraph1">1</a>, the environment is a 2D scenario.
+The whole scenario is surrounded by fences.
+There are 4 irregularly shaped obstacles.
+To show the learned ability generalizes well with different layouts of obstacles,
+the obstacles will revolve about the center of the room slowly,
+at a constant speed, during the runtime.
+</p>
+
+<p>
+For each period, the car starts from the center of the room,
+with a randomly chosen direction.
+Its action is controlled by a reinforcement learning algorithm.
+During the early periods, the actions are like randomly decided.
+When the car runs into obstacles or fences,
+it will be repositioned to the center of the room, and a new period begins.
+The car learns over time.
+</p>
+
+<p>
+The illustration comprises two parts, a 2D environment described above,
+and a learning algorithm which controls the action of the car.
+The algorithm learns from and makes decisions on specified data provided by the environment.
+The environment emulates 5 state sensors,
+corresponding to 5 different direction in front of the car.
+These sensors find the nearest obstacle,
+and measure the distance from the obstacle to the car.
+The distance information is transferred to the car in the form of a 5D vector.
+During running, the algorithm will predict an action based on the distance information 
+and then feed it back to the environment, to control the movement of the car. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.2</span> reimplementation</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<div id="orgparagraph3" class="figure">
+<p><img src="images/reimplementation_structure.png" alt="reimplementation_structure.png" />
+</p>
+<p><span class="figure-number">Figure 3:</span> structure</p>
+</div>
+
+<p>
+It includes 3 steps.
 </p>
 <ul class="org-ul">
 <li>Build an environment.</li>
@@ -191,15 +235,17 @@ It includes 3 steps
 <li>Transfer learning data and actions between the environment and the algorithm.</li>
 </ul>
 
-
 <p>
-we choose to use a 3D rendering engine for convenience. Because our later goal is to make an agent able to learn to avoid obstacles in 3D environment. 
+We choose to build the environment on a 3D rendering engine. 
+It is for convenience.
+Because our later goal is to make an agent to be able to learn to avoid obstacles in 3D environments. 
 </p>
 </div>
 </div>
 </div>
+</div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-08-19 Fri 09:20</p>
+<p class="date">Created: 2016-08-19 Fri 09:46</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
