@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-08-19 Fri 09:46 -->
+<!-- 2016-08-19 Fri 11:32 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>My little document</title>
@@ -139,6 +139,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -147,22 +169,62 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline3">1. root</a>
+<li><a href="#orgheadline12">1. root</a>
 <ul>
-<li><a href="#orgheadline1">1.1. The video</a></li>
-<li><a href="#orgheadline2">1.2. reimplementation</a></li>
+<li><a href="#orgheadline2">1.1. Reinforcement Learning</a>
+<ul>
+<li><a href="#orgheadline1">1.1.1. Q Learning</a></li>
 </ul>
 </li>
+<li><a href="#orgheadline3">1.2. The video</a></li>
+<li><a href="#orgheadline11">1.3. Re-Implementation</a>
+<ul>
+<li><a href="#orgheadline6">1.3.1. The Environment</a>
+<ul>
+<li><a href="#orgheadline4">1.3.1.1. Panda3D</a></li>
+<li><a href="#orgheadline5">1.3.1.2. </a></li>
+</ul>
+</li>
+<li><a href="#orgheadline7">1.3.2. Reinforcement Learning</a></li>
+<li><a href="#orgheadline9">1.3.3. Learning Data</a>
+<ul>
+<li><a href="#orgheadline8">1.3.3.1. a</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline10">1.3.4. Results and discussion:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgheadline13">2. a</a></li>
+<li><a href="#orgheadline14">3. a</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgheadline3" class="outline-2">
-<h2 id="orgheadline3"><span class="section-number-2">1</span> root</h2>
+<div id="outline-container-orgheadline12" class="outline-2">
+<h2 id="orgheadline12"><span class="section-number-2">1</span> root</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orgheadline1" class="outline-3">
-<h3 id="orgheadline1"><span class="section-number-3">1.1</span> The video</h3>
+</div><div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2"><span class="section-number-3">1.1</span> Reinforcement Learning</h3>
 <div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-orgheadline1" class="outline-4">
+<h4 id="orgheadline1"><span class="section-number-4">1.1.1</span> Q Learning</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+\[\frac{1}{\sqrt{2\pi\sigma^2}}e^{ -\frac{(x-\mu)^2}{2\sigma^2} }\]
+</p>
+
+<p>
+{\displaystyle Q(s<sub>t</sub>,a<sub>t</sub>)&larr; \underbrace {Q(s<sub>t</sub>,a<sub>t</sub>)} _{\rm {old~value}}+\underbrace {&alpha; } _{\rm {learning~rate}}&sdot; \left(\overbrace {\underbrace {r<sub>t+1</sub>} _{\rm {reward}}+\underbrace {&gamma; } _{\rm {discount~factor}}&sdot; \underbrace {max _{a}Q(s<sub>t+1</sub>,a)} _{\rm {estimate~of~optimal~future~value}}} ^{\rm {learned~value}}-\underbrace {Q(s<sub>t</sub>,a<sub>t</sub>)} _{\rm {old~value}}\right)}
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3"><span class="section-number-3">1.2</span> The video</h3>
+<div class="outline-text-3" id="text-1-2">
 <p>
 <a href="https://www.youtube.com/watch?v=zOgSC---rgM">https://www.youtube.com/watch?v=zOgSC---rgM</a>
 </p>
@@ -174,13 +236,6 @@ for the JavaScript code in this tag.
 <p><span class="figure-number">Figure 1:</span> youtube<sub>screenshot</sub></p>
 </div>
 
-
-<div id="orgparagraph2" class="figure">
-<p><img src="images/youtube_structure.png" alt="youtube_structure.png" />
-</p>
-<p><span class="figure-number">Figure 2:</span> youtube<sub>structure</sub></p>
-</div>
-
 <p>
 The video illustrates a car learning to avoid obstacles. 
 As shown in Figure <a href="#orgparagraph1">1</a>, the environment is a 2D scenario.
@@ -188,7 +243,7 @@ The whole scenario is surrounded by fences.
 There are 4 irregularly shaped obstacles.
 To show the learned ability generalizes well with different layouts of obstacles,
 the obstacles will revolve about the center of the room slowly,
-at a constant speed, during the runtime.
+at a constant speed, during running.
 </p>
 
 <p>
@@ -200,6 +255,13 @@ When the car runs into obstacles or fences,
 it will be repositioned to the center of the room, and a new period begins.
 The car learns over time.
 </p>
+
+
+<div id="orgparagraph2" class="figure">
+<p><img src="images/youtube_structure.png" alt="youtube_structure.png" />
+</p>
+<p><span class="figure-number">Figure 2:</span> youtube<sub>structure</sub></p>
+</div>
 
 <p>
 The illustration comprises two parts, a 2D environment described above,
@@ -216,9 +278,14 @@ and then feed it back to the environment, to control the movement of the car.
 </div>
 </div>
 
-<div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2"><span class="section-number-3">1.2</span> reimplementation</h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11"><span class="section-number-3">1.3</span> Re-Implementation</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+For our further research, we need a verified code base to start with. 
+So we want to implement the application in this video. 
+</p>
+
 
 <div id="orgparagraph3" class="figure">
 <p><img src="images/reimplementation_structure.png" alt="reimplementation_structure.png" />
@@ -232,20 +299,140 @@ It includes 3 steps.
 <ul class="org-ul">
 <li>Build an environment.</li>
 <li>Implement a reinforcement learning algorithm to control the car.</li>
-<li>Transfer learning data and actions between the environment and the algorithm.</li>
+<li>Provide and transfer learning data and actions between the environment and the algorithm.</li>
 </ul>
+</div>
+
+<div id="outline-container-orgheadline6" class="outline-4">
+<h4 id="orgheadline6"><span class="section-number-4">1.3.1</span> The Environment</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+We choose to build this 2D environment on a 3D rendering engine. 
+It is for the convenience of later transition.
+Because our later goal is to train the car to avoid obstacles in 3D environments. 
+</p>
+</div>
+<div id="outline-container-orgheadline4" class="outline-5">
+<h5 id="orgheadline4"><span class="section-number-5">1.3.1.1</span> Panda3D</h5>
+</div>
+<div id="outline-container-orgheadline5" class="outline-5">
+<h5 id="orgheadline5"><span class="section-number-5">1.3.1.2</span> </h5>
+<div class="outline-text-5" id="text-1-3-1-2">
+<p>
+Figure 1.4 A 3D view
+                        A cube room. A (round) pole at the left bottom corner. Another (square) pole at the top right
+                        Randomly positioned chess pieces (200-400) (maybe overlapped)
+</p>
+
+
 
 <p>
-We choose to build the environment on a 3D rendering engine. 
-It is for convenience.
-Because our later goal is to make an agent to be able to learn to avoid obstacles in 3D environments. 
+Figure 2D view (mark the poles)
+(Green circle/blue lines remove later)
+Different Red shapes are obstacles
+Green destination(remove)
+Blue line routes (remove)
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline7" class="outline-4">
+<h4 id="orgheadline7"><span class="section-number-4">1.3.2</span> Reinforcement Learning</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+We started this part with a project on Github.com
+</p>
+<dl class="org-dl">
+<dt>Paper</dt><dd><a href="http://arxiv.org/abs/1312.5602">http://arxiv.org/abs/1312.5602</a></dd>
+<dt>Code</dt><dd><a href="https://github.com/spragunr/deep_q_rl">https://github.com/spragunr/deep_q_rl</a></dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-orgheadline9" class="outline-4">
+<h4 id="orgheadline9"><span class="section-number-4">1.3.3</span> Learning Data</h4>
+<div class="outline-text-4" id="text-1-3-3">
+</div><div id="outline-container-orgheadline8" class="outline-5">
+<h5 id="orgheadline8"><span class="section-number-5">1.3.3.1</span> a</h5>
+<div class="outline-text-5" id="text-1-3-3-1">
+<p>
+·         Extracting depth maps (
+Goal: E (distance) =&gt; Q )
+Convenient Method: depth map =&gt; distance
+首先,根据场景内的三维模型生成深度信息(<a href="https://en.wikipedia.org/wiki/Depth_map">https://en.wikipedia.org/wiki/Depth_map</a>) (Figure 2).
+What is depth map? Figure ???
+How to generate from 3d models
+How to extract distance from depth map. Figure ???
+</p>
+
+<p>
+然后,截取地平线的部分(Figure 3),作为对视频中的一维距离信息的模拟,发送给agent
+在场景中,当agent遇到障碍物的时候,场景会发送惩罚信号给agent.
+Figure 1: agent视角的虚拟三维环境,通过三维引擎的立体视觉模式加入了左右两个视角
+Figure 2: depth map generated from 3d models
+Figure 3: 截取地平线的部分生成一维的深度信息
+o   Reimplement q-learning
+o   Feeding distance to q-learning
+Different Implementaion
+o   Data: volume??
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgheadline10" class="outline-4">
+<h4 id="orgheadline10"><span class="section-number-4">1.3.4</span> Results and discussion:</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<p>
+o   在满是障碍物的地图上,agent很明显的可以在较长的一段时间中避开障碍物. 但是并不能做到在所以情形下完全避开障碍物.
+o   1.2.5.1 问题
+o   我们缺乏有效的指标判断训练结果的有效性. 障碍物地图是随机生成的,有些情况下agent可能陷入无法避开障碍物的情形.但是我们缺乏手段评估哪些障碍物环境是属于这一类别的.
+o   在参数调整的后期,很难根据agent不碰撞的时间长度来判断算法的优劣
 </p>
 </div>
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgheadline13" class="outline-2">
+<h2 id="orgheadline13"><span class="section-number-2">2</span> a</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+由于我们的最终目标是训练agent学会在三维空间中避障. 因此,出于便利性的考虑,我们在这个阶段已经完成了三维虚拟环境(Figure 1), 但是在算法中仍然将其视作一个二维空间,模拟成视频中的场景
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline14" class="outline-2">
+<h2 id="orgheadline14"><span class="section-number-2">3</span> a</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+连接虚拟环境和DQN算法
+原本的github上的DQN程序是和Atari模拟器对接的. 在完成了虚拟环境之后,我们使用这个虚拟环境替换掉了Atari模拟器. 由于输入从Atari的二维画面转换成了一维的距离信息,我们也把DQN中的cnn替换成了普通的多层神经网络.
+1.2.4 训练
+1.2.4.1 随机行为
+一般的强化学习算法一样,最初阶段agent的行为是被设定为随机的,以此来积累周围环境的知识.
+</p>
+
+<p>
+·        Q learning
+Describe:
+·        illustrated in Figure 1.2: from youtube
+ Action 
+Action value function
+</p>
+
+
+
+
+<p>
+         Figure 1.2
+Describe the method used in the video
+</p>
+</div>
+</div>
+</div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-08-19 Fri 09:46</p>
+<p class="date">Created: 2016-08-19 Fri 11:32</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

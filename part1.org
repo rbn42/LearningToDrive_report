@@ -4,6 +4,9 @@
 
 * root
 ** Reinforcement Learning
+***  Q Learning
+$$Q(s_{t},a_{t})\leftarrow \underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}+\underbrace {\alpha } _{\rm {learning~rate}}\cdot \left(\overbrace {\underbrace {r_{t+1}} _{\rm {reward}}+\underbrace {\gamma } _{\rm {discount~factor}}\cdot \underbrace {\max _{a}Q(s_{t+1},a)} _{\rm {estimate~of~optimal~future~value}}} ^{\rm {learned~value}}-\underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}\right)$$
+
 ** The video
  https://www.youtube.com/watch?v=zOgSC---rgM
     
@@ -45,6 +48,8 @@
  and then feed it back to the environment, to control the movement of the car. 
  
 ** Re-Implementation
+   For our further research, we need a verified code base to start with. 
+   So we want to implement the application in this video. 
     
    #+CAPTION: structure
    #+ATTR_LATEX: :width 10cm
@@ -54,29 +59,37 @@
    It includes 3 steps.
    - Build an environment.
    - Implement a reinforcement learning algorithm to control the car.
-   - Transfer learning data and actions between the environment and the algorithm.
+   - Provide and transfer learning data and actions between the environment and the algorithm.
 
 *** The Environment
    We choose to build this 2D environment on a 3D rendering engine. 
    It is for the convenience of later transition.
    Because our later goal is to train the car to avoid obstacles in 3D environments. 
 **** Panda3D 
+**** Layout 
+
+     #+CAPTION: A 3D view
+     #+ATTR_LATEX: :width 10cm
+     #+NAME:   fig:screenshot_stereo
+     file:images/screenshot_stereo.png
+
+     #+CAPTION: (mark the poles)(Green circle/blue lines remove later) Different Red shapes are obstaclesi Green destination(remove)Blue line routes (remove)
+     #+ATTR_LATEX: :width 10cm
+     #+NAME:   fig:screenshot_layout_2D
+     file:images/screenshot_layout_2D.png
+
+     A cube room. 
+     A (round) pole at the left bottom corner. Another (square) pole at the top right
+     Randomly positioned chess pieces (200-400) (maybe overlapped)
+ 
+ 
+ 
+*** Reinforcement Learning 
+    We started this part with a project on Github.com
+    - Paper :: http://arxiv.org/abs/1312.5602
+    - Code :: https://github.com/spragunr/deep_q_rl
 *** Learning Data
-* 
-Figure 1.4 A 3D view
-                        A cube room. A (round) pole at the left bottom corner. Another (square) pole at the top right
-                        Randomly positioned chess pieces (200-400) (maybe overlapped)
- 
- 
- 
- 
-Figure 2D view (mark the poles)
-(Green circle/blue lines remove later)
-Different Red shapes are obstacles
-Green destination(remove)
-Blue line routes (remove)
-由于我们的最终目标是训练agent学会在三维空间中避障. 因此,出于便利性的考虑,我们在这个阶段已经完成了三维虚拟环境(Figure 1), 但是在算法中仍然将其视作一个二维空间,模拟成视频中的场景
- 
+****  a
  
 ·         Extracting depth maps (
 Goal: E (distance) => Q )
@@ -95,14 +108,18 @@ o   Reimplement q-learning
 o   Feeding distance to q-learning
 Different Implementaion
 o   Data: volume??
+
+*** Results and discussion:
+  o   在满是障碍物的地图上,agent很明显的可以在较长的一段时间中避开障碍物. 但是并不能做到在所以情形下完全避开障碍物.
+  o   1.2.5.1 问题
+  o   我们缺乏有效的指标判断训练结果的有效性. 障碍物地图是随机生成的,有些情况下agent可能陷入无法避开障碍物的情形.但是我们缺乏手段评估哪些障碍物环境是属于这一类别的.
+  o   在参数调整的后期,很难根据agent不碰撞的时间长度来判断算法的优劣
  
-o   Results and discussion:
-o   在满是障碍物的地图上,agent很明显的可以在较长的一段时间中避开障碍物. 但是并不能做到在所以情形下完全避开障碍物.
-o   1.2.5.1 问题
-o   我们缺乏有效的指标判断训练结果的有效性. 障碍物地图是随机生成的,有些情况下agent可能陷入无法避开障碍物的情形.但是我们缺乏手段评估哪些障碍物环境是属于这一类别的.
-o   在参数调整的后期,很难根据agent不碰撞的时间长度来判断算法的优劣
+* a
+
+由于我们的最终目标是训练agent学会在三维空间中避障. 因此,出于便利性的考虑,我们在这个阶段已经完成了三维虚拟环境(Figure 1), 但是在算法中仍然将其视作一个二维空间,模拟成视频中的场景
  
- 
+* a
 连接虚拟环境和DQN算法
 原本的github上的DQN程序是和Atari模拟器对接的. 在完成了虚拟环境之后,我们使用这个虚拟环境替换掉了Atari模拟器. 由于输入从Atari的二维画面转换成了一维的距离信息,我们也把DQN中的cnn替换成了普通的多层神经网络.
 1.2.4 训练
