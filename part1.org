@@ -89,6 +89,11 @@ Q(s_{t},a_{t})\
 **** Panda3D
      The 3D rendering task is assigned to Panda3D, a game development environment.
      It is written in C++ and supports both C++ and python.
+***** Intra Process Communication
+      In future research, 
+      it is required to frequently transfer raw images from the environment to the learning model.
+      Since we will write both programs in python, the data can then be transferred as an intra-process pointer.
+      This will be convenient and efficient.
 
 **** Layout 
      
@@ -106,6 +111,7 @@ Q(s_{t},a_{t})\
      A round pole is fixed at the left bottom corner (Figure [[fig:screenshot_layout_2D]]).
      And a square pole is fixed at the top right corner.
      200 chess pieces are randomly positioned in the room.
+
 *** Learning Data
 **** a
  
