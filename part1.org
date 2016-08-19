@@ -71,7 +71,6 @@ Q(s_{t},a_{t})\
     In further research, we will build a variant algorithm of the deep q network.
     So we choose this implementation of deep q network as the code base of our reinforcement learning algorithm.
     This implementation is written in python, and based on Theano and Lasagne.
-
     - Paper :: http://arxiv.org/abs/1312.5602
     - Code :: https://github.com/spragunr/deep_q_rl
 **** Adaptation
@@ -87,51 +86,67 @@ Q(s_{t},a_{t})\
     It is for the convenience of later transition.
     Because our later goal is to train the car to avoid obstacles in 3D environments. 
 **** Panda3D
-     The 3D rendering task is assigned to Panda3D, a game development environment.
+     The 3D rendering task will be accomplished by Panda3D, a game development environment.
      It is written in C++ and supports both C++ and python.
 ***** Intra Process Communication
       In future research, 
       it is required to frequently transfer raw images from the environment to the learning model.
-      Since we will write both programs in python, the data can then be transferred as an intra-process pointer.
-      This will be convenient and efficient.
-
+      To make this process more efficient, we want to be able to transfer image data as an intra-process pointer.
+      Choosing python as the programming language for both the environment and the learning model 
+      will allows us to conveniently implement this mechanism.
+**** Models
+     The 3D models used to build the 3D environment come from Panda3D's example games.
+     - The models of the room are provided by the example bump-mapping. 
+     - The models of the chess pieces are provided by the example chessboard.
 **** Layout 
      
-     #+CAPTION: A 3D view
+     #+CAPTION: A 3D first person view of the car
      #+ATTR_LATEX: :width 10cm
-     #+NAME:   fig:screenshot_stereo
-     file:images/screenshot_stereo.png
+     #+NAME:   fig:screenshot_first_person
+     file:images/screenshot_first_person.png
 
      #+CAPTION: A top-down view. Red shapes represents obstacles. (mark the poles later)(Green circle/blue lines remove later) Green destination(remove)Blue line routes (remove)
      #+ATTR_LATEX: :width 10cm
      #+NAME:   fig:screenshot_layout_2D
      file:images/screenshot_layout_2D.png
 
-     As shown in Figure [[fig:screenshot_stereo]], the scenario is located in a cubic room.
+     As shown in Figure [[fig:screenshot_first_person]], the scenario is located in a cubic room.
      A round pole is fixed at the left bottom corner (Figure [[fig:screenshot_layout_2D]]).
      And a square pole is fixed at the top right corner.
      200 chess pieces are randomly positioned in the room.
 
 *** Learning Data
-**** a
  
-·         Extracting depth maps (
-Goal: E (distance) => Q )
-Convenient Method: depth map => distance
-首先,根据场景内的三维模型生成深度信息(https://en.wikipedia.org/wiki/Depth_map) (Figure 2).
-What is depth map? Figure ???
-How to generate from 3d models
-How to extract distance from depth map. Figure ???
+      #+CAPTION: cropping the horizontal line from the depth map
+      #+ATTR_LATEX: :width 5cm
+      #+NAME:   fig:screenshot_first_person
+      file:images/depth_map_1d.png
 
-然后,截取地平线的部分(Figure 3),作为对视频中的一维距离信息的模拟,发送给agent
-在场景中,当agent遇到障碍物的时候,场景会发送惩罚信号给agent.
-Figure 1: agent视角的虚拟三维环境,通过三维引擎的立体视觉模式加入了左右两个视角
-Figure 2: depth map generated from 3d models
-Figure 3: 截取地平线的部分生成一维的深度信息
-o   Reimplement q-learning
-o   Feeding distance to q-learning
-Different Implementaion
-o   Data: volume??
+**** Depth Map
+
+      #+CAPTION: A depth map
+      #+ATTR_LATEX: :width 5cm
+      #+NAME:   fig:depth_map
+      file:images/depth_map.png
+
+
+ ·         Extracting depth maps (
+ Goal: E (distance) => Q )
+ Convenient Method: depth map => distance
+ 首先,根据场景内的三维模型生成深度信息(https://en.wikipedia.org/wiki/Depth_map) (Figure 2).
+ What is depth map? Figure ???
+ How to generate from 3d models
+ How to extract distance from depth map. Figure ???
+
+ 然后,截取地平线的部分(Figure 3),作为对视频中的一维距离信息的模拟,发送给agent
+ 在场景中,当agent遇到障碍物的时候,场景会发送惩罚信号给agent.
+ Figure 1: agent视角的虚拟三维环境,通过三维引擎的立体视觉模式加入了左右两个视角
+ Figure 2: depth map generated from 3d models
+ Figure 3: 截取地平线的部分生成一维的深度信息
+ o   Reimplement q-learning
+ o   Feeding distance to q-learning
+ Different Implementaion
+ o   Data: volume??
 *** Training
 **** Random Actions
 *** Results and discussion:
@@ -142,3 +157,4 @@ o   Data: volume??
    
    
    
+     

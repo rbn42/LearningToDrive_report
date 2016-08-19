@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-08-20 Sat 00:05 -->
+<!-- 2016-08-20 Sat 06:04 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>My little document</title>
@@ -169,36 +169,45 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline15">1. root</a>
+<li><a href="#orgheadline18">1. root</a>
 <ul>
 <li><a href="#orgheadline2">1.1. Reinforcement Learning</a>
 <ul>
 <li><a href="#orgheadline1">1.1.1. Q Learning</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline3">1.2. The video&#xa0;&#xa0;&#xa0;<span class="tag"><span class="F">F</span></span></a></li>
-<li><a href="#orgheadline14">1.3. Re-Implementation</a>
+<li><a href="#orgheadline3">1.2. The video</a></li>
+<li><a href="#orgheadline17">1.3. Re-Implementation</a>
 <ul>
-<li><a href="#orgheadline6">1.3.1. The Environment</a>
+<li><a href="#orgheadline5">1.3.1. Reinforcement Learning</a>
 <ul>
-<li><a href="#orgheadline4">1.3.1.1. Panda3D</a></li>
-<li><a href="#orgheadline5">1.3.1.2. Layout</a></li>
+<li><a href="#orgheadline4">1.3.1.1. Adaptation</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline7">1.3.2. Reinforcement Learning</a></li>
-<li><a href="#orgheadline9">1.3.3. Learning Data</a>
+<li><a href="#orgheadline10">1.3.2. The Environment</a>
 <ul>
-<li><a href="#orgheadline8">1.3.3.1. a</a></li>
+<li><a href="#orgheadline7">1.3.2.1. Panda3D</a>
+<ul>
+<li><a href="#orgheadline6">1.3.2.1.1. Intra Process Communication</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline11">1.3.4. Training</a>
-<ul>
-<li><a href="#orgheadline10">1.3.4.1. Random Actions</a></li>
+<li><a href="#orgheadline8">1.3.2.2. Models</a></li>
+<li><a href="#orgheadline9">1.3.2.3. Layout</a></li>
 </ul>
 </li>
-<li><a href="#orgheadline13">1.3.5. Results and discussion:</a>
+<li><a href="#orgheadline12">1.3.3. Learning Data</a>
 <ul>
-<li><a href="#orgheadline12">1.3.5.1. Problems</a></li>
+<li><a href="#orgheadline11">1.3.3.1. Depth Map</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline14">1.3.4. Training</a>
+<ul>
+<li><a href="#orgheadline13">1.3.4.1. Random Actions</a></li>
+</ul>
+</li>
+<li><a href="#orgheadline16">1.3.5. Results and discussion:</a>
+<ul>
+<li><a href="#orgheadline15">1.3.5.1. Problems</a></li>
 </ul>
 </li>
 </ul>
@@ -209,8 +218,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgheadline15" class="outline-2">
-<h2 id="orgheadline15"><span class="section-number-2">1</span> root</h2>
+<div id="outline-container-orgheadline18" class="outline-2">
+<h2 id="orgheadline18"><span class="section-number-2">1</span> root</h2>
 <div class="outline-text-2" id="text-1">
 </div><div id="outline-container-orgheadline2" class="outline-3">
 <h3 id="orgheadline2"><span class="section-number-3">1.1</span> Reinforcement Learning</h3>
@@ -231,7 +240,7 @@ Q(s_{t},a_{t})\
 </div>
 </div>
 <div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3"><span class="section-number-3">1.2</span> The video&#xa0;&#xa0;&#xa0;<span class="tag"><span class="F">F</span></span></h3>
+<h3 id="orgheadline3"><span class="section-number-3">1.2</span> The video</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 <a href="https://www.youtube.com/watch?v=zOgSC---rgM">https://www.youtube.com/watch?v=zOgSC---rgM</a>
@@ -286,8 +295,8 @@ and then feed it back to the environment, to control the movement of the car.
 </div>
 </div>
 
-<div id="outline-container-orgheadline14" class="outline-3">
-<h3 id="orgheadline14"><span class="section-number-3">1.3</span> Re-Implementation</h3>
+<div id="outline-container-orgheadline17" class="outline-3">
+<h3 id="orgheadline17"><span class="section-number-3">1.3</span> Re-Implementation</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 For our further research, we need a verified code base to start with. 
@@ -311,26 +320,86 @@ The implementation takes 3 steps.
 </ul>
 </div>
 
-<div id="outline-container-orgheadline6" class="outline-4">
-<h4 id="orgheadline6"><span class="section-number-4">1.3.1</span> The Environment</h4>
+<div id="outline-container-orgheadline5" class="outline-4">
+<h4 id="orgheadline5"><span class="section-number-4">1.3.1</span> Reinforcement Learning</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <p>
-We choose to build this 2D environment on a 3D rendering engine. 
+We started this part with a project on Github.com.
+In further research, we will build a variant algorithm of the deep q network.
+So we choose this implementation of deep q network as the code base of our reinforcement learning algorithm.
+This implementation is written in python, and based on Theano and Lasagne.
+</p>
+
+<dl class="org-dl">
+<dt>Paper</dt><dd><a href="http://arxiv.org/abs/1312.5602">http://arxiv.org/abs/1312.5602</a></dd>
+<dt>Code</dt><dd><a href="https://github.com/spragunr/deep_q_rl">https://github.com/spragunr/deep_q_rl</a></dd>
+</dl>
+</div>
+<div id="outline-container-orgheadline4" class="outline-5">
+<h5 id="orgheadline4"><span class="section-number-5">1.3.1.1</span> Adaptation</h5>
+<div class="outline-text-5" id="text-1-3-1-1">
+<p>
+The deep q network takes the raw images of a game as its inputs to predict actions.
+The network includes convolutional layers to handle the image data.
+But the current environment provides only distance information, 
+in the form of a vector, 
+instead of the raw images.
+So we replaced the convolutional neural network with a simple multi-layer neural network,
+to handle the distance information.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline10" class="outline-4">
+<h4 id="orgheadline10"><span class="section-number-4">1.3.2</span> The Environment</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+We choose to build this 2D environment on a real-time 3D rendering engine. 
 It is for the convenience of later transition.
 Because our later goal is to train the car to avoid obstacles in 3D environments. 
 </p>
 </div>
-<div id="outline-container-orgheadline4" class="outline-5">
-<h5 id="orgheadline4"><span class="section-number-5">1.3.1.1</span> Panda3D</h5>
+<div id="outline-container-orgheadline7" class="outline-5">
+<h5 id="orgheadline7"><span class="section-number-5">1.3.2.1</span> Panda3D</h5>
+<div class="outline-text-5" id="text-1-3-2-1">
+<p>
+The 3D rendering task will be accomplished by Panda3D, a game development environment.
+It is written in C++ and supports both C++ and python.
+</p>
 </div>
-<div id="outline-container-orgheadline5" class="outline-5">
-<h5 id="orgheadline5"><span class="section-number-5">1.3.1.2</span> Layout</h5>
-<div class="outline-text-5" id="text-1-3-1-2">
+<div id="outline-container-orgheadline6" class="outline-6">
+<h6 id="orgheadline6"><span class="section-number-6">1.3.2.1.1</span> Intra Process Communication</h6>
+<div class="outline-text-6" id="text-1-3-2-1-1">
+<p>
+In future research, 
+it is required to frequently transfer raw images from the environment to the learning model.
+To make this process more efficient, we want to be able to transfer image data as an intra-process pointer.
+Choosing python as the programming language for both the environment and the learning model 
+will allows us to conveniently implement this mechanism.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgheadline8" class="outline-5">
+<h5 id="orgheadline8"><span class="section-number-5">1.3.2.2</span> Models</h5>
+<div class="outline-text-5" id="text-1-3-2-2">
+<p>
+The 3D models used to build the 3D environment come from Panda3D's example games.
+</p>
+<ul class="org-ul">
+<li>The models of the room are provided by the example bump-mapping.</li>
+<li>The models of the chess pieces are provided by the example chessboard.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgheadline9" class="outline-5">
+<h5 id="orgheadline9"><span class="section-number-5">1.3.2.3</span> Layout</h5>
+<div class="outline-text-5" id="text-1-3-2-3">
 
 <div id="orgparagraph4" class="figure">
-<p><img src="images/screenshot_stereo.png" alt="screenshot_stereo.png" />
+<p><img src="images/screenshot_first_person.png" alt="screenshot_first_person.png" />
 </p>
-<p><span class="figure-number">Figure 4:</span> A 3D view</p>
+<p><span class="figure-number">Figure 4:</span> A 3D first person view of the car</p>
 </div>
 
 
@@ -350,24 +419,28 @@ And a square pole is fixed at the top right corner.
 </div>
 </div>
 
-<div id="outline-container-orgheadline7" class="outline-4">
-<h4 id="orgheadline7"><span class="section-number-4">1.3.2</span> Reinforcement Learning</h4>
-<div class="outline-text-4" id="text-1-3-2">
-<p>
-We started this part with a project on Github.com
-</p>
-<dl class="org-dl">
-<dt>Paper</dt><dd><a href="http://arxiv.org/abs/1312.5602">http://arxiv.org/abs/1312.5602</a></dd>
-<dt>Code</dt><dd><a href="https://github.com/spragunr/deep_q_rl">https://github.com/spragunr/deep_q_rl</a></dd>
-</dl>
-</div>
-</div>
-<div id="outline-container-orgheadline9" class="outline-4">
-<h4 id="orgheadline9"><span class="section-number-4">1.3.3</span> Learning Data</h4>
+<div id="outline-container-orgheadline12" class="outline-4">
+<h4 id="orgheadline12"><span class="section-number-4">1.3.3</span> Learning Data</h4>
 <div class="outline-text-4" id="text-1-3-3">
-</div><div id="outline-container-orgheadline8" class="outline-5">
-<h5 id="orgheadline8"><span class="section-number-5">1.3.3.1</span> a</h5>
+
+<div id="orgparagraph6" class="figure">
+<p><img src="images/depth_map_1d.png" alt="depth_map_1d.png" />
+</p>
+<p><span class="figure-number">Figure 6:</span> cropping the horizontal line from the depth map</p>
+</div>
+</div>
+
+<div id="outline-container-orgheadline11" class="outline-5">
+<h5 id="orgheadline11"><span class="section-number-5">1.3.3.1</span> Depth Map</h5>
 <div class="outline-text-5" id="text-1-3-3-1">
+
+<div id="orgparagraph7" class="figure">
+<p><img src="images/depth_map.png" alt="depth_map.png" />
+</p>
+<p><span class="figure-number">Figure 7:</span> A depth map</p>
+</div>
+
+
 <p>
 ·         Extracting depth maps (
 Goal: E (distance) =&gt; Q )
@@ -392,22 +465,22 @@ o   Data: volume??
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline11" class="outline-4">
-<h4 id="orgheadline11"><span class="section-number-4">1.3.4</span> Training</h4>
+<div id="outline-container-orgheadline14" class="outline-4">
+<h4 id="orgheadline14"><span class="section-number-4">1.3.4</span> Training</h4>
 <div class="outline-text-4" id="text-1-3-4">
-</div><div id="outline-container-orgheadline10" class="outline-5">
-<h5 id="orgheadline10"><span class="section-number-5">1.3.4.1</span> Random Actions</h5>
+</div><div id="outline-container-orgheadline13" class="outline-5">
+<h5 id="orgheadline13"><span class="section-number-5">1.3.4.1</span> Random Actions</h5>
 </div>
 </div>
-<div id="outline-container-orgheadline13" class="outline-4">
-<h4 id="orgheadline13"><span class="section-number-4">1.3.5</span> Results and discussion:</h4>
+<div id="outline-container-orgheadline16" class="outline-4">
+<h4 id="orgheadline16"><span class="section-number-4">1.3.5</span> Results and discussion:</h4>
 <div class="outline-text-4" id="text-1-3-5">
 <p>
 在满是障碍物的地图上,agent很明显的可以在较长的一段时间中避开障碍物. 但是并不能做到在所以情形下完全避开障碍物.
 </p>
 </div>
-<div id="outline-container-orgheadline12" class="outline-5">
-<h5 id="orgheadline12"><span class="section-number-5">1.3.5.1</span> Problems</h5>
+<div id="outline-container-orgheadline15" class="outline-5">
+<h5 id="orgheadline15"><span class="section-number-5">1.3.5.1</span> Problems</h5>
 <div class="outline-text-5" id="text-1-3-5-1">
 <p>
 我们缺乏有效的指标判断训练结果的有效性. 障碍物地图是随机生成的,有些情况下agent可能陷入无法避开障碍物的情形.但是我们缺乏手段评估哪些障碍物环境是属于这一类别的.
@@ -420,7 +493,7 @@ o   Data: volume??
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-08-20 Sat 00:05</p>
+<p class="date">Created: 2016-08-20 Sat 06:04</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
