@@ -5,47 +5,52 @@
 * root
 ** Reinforcement Learning
 ***  Q Learning
-$$Q(s_{t},a_{t})\leftarrow \underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}+\underbrace {\alpha } _{\rm {learning~rate}}\cdot \left(\overbrace {\underbrace {r_{t+1}} _{\rm {reward}}+\underbrace {\gamma } _{\rm {discount~factor}}\cdot \underbrace {\max _{a}Q(s_{t+1},a)} _{\rm {estimate~of~optimal~future~value}}} ^{\rm {learned~value}}-\underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}\right)$$
-
+$$
+Q(s_{t},a_{t})\
+\leftarrow\
+ \underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}\
++\underbrace {\alpha } _{\rm {learning~rate}}\
+\cdot \left(\
+\overbrace {\underbrace {r_{t+1}} _{\rm {reward}}+\underbrace {\gamma } _{\rm {discount~factor}}\cdot \underbrace {\max _{a}Q(s_{t+1},a)} _{\rm {estimate~of~optimal~future~value}}} ^{\rm {learned~value}}-\underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}\right)$$
 ** The video
- https://www.youtube.com/watch?v=zOgSC---rgM
-    
- #+CAPTION: youtube_screenshot
- #+ATTR_LATEX: :width 10cm
- #+NAME:   fig:youtube_screenshot
- file:images/youtube_screenshot.png
-  
- The video illustrates a car learning to avoid obstacles. 
- As shown in Figure [[fig:youtube_screenshot]], the environment is a 2D scenario.
- The whole scenario is surrounded by fences.
- There are 4 irregularly shaped obstacles.
- To show the learned ability generalizes well with different layouts of obstacles,
- the obstacles will revolve about the center of the room slowly,
- at a constant speed, during running.
+   https://www.youtube.com/watch?v=zOgSC---rgM
+   
+   #+CAPTION: youtube_screenshot
+   #+ATTR_LATEX: :width 10cm
+   #+NAME:   fig:youtube_screenshot
+   file:images/youtube_screenshot.png
+   
+   The video illustrates a car learning to avoid obstacles. 
+   As shown in Figure [[fig:youtube_screenshot]], the environment is a 2D scenario.
+   The whole scenario is surrounded by fences.
+   There are 4 irregularly shaped obstacles.
+   To show the learned ability generalizes well with different layouts of obstacles,
+   the obstacles will revolve about the center of the room slowly,
+   at a constant speed, during running.
 
- For each period, the car starts from the center of the room,
- with a randomly chosen direction.
- Its action is controlled by a reinforcement learning algorithm.
- During the early periods, the actions are like randomly decided.
- When the car runs into obstacles or fences,
- it will be repositioned to the center of the room, and a new period begins.
- The car learns over time.
+   For each period, the car starts from the center of the room,
+   with a randomly chosen direction.
+   Its action is controlled by a reinforcement learning algorithm.
+   During the early periods, the actions are like randomly decided.
+   When the car runs into obstacles or fences,
+   it will be repositioned to the center of the room, and a new period begins.
+   The car learns over time.
+   
+   #+CAPTION: youtube_structure
+   #+ATTR_LATEX: :width 10cm
+   #+NAME:   fig:youtube_structure
+   file:images/youtube_structure.png
  
- #+CAPTION: youtube_structure
- #+ATTR_LATEX: :width 10cm
- #+NAME:   fig:youtube_structure
- file:images/youtube_structure.png
-    
- The illustration comprises two parts, a 2D environment described above,
- and a learning algorithm which controls the action of the car.
- The algorithm learns from and makes decisions on specified data provided by the environment.
- The environment emulates 5 state sensors,
- corresponding to 5 different direction in front of the car.
- These sensors find the nearest obstacle,
- and measure the distance from the obstacle to the car.
- The distance information is transferred to the car in the form of a 5D vector.
- During running, the algorithm will predict an action based on the distance information 
- and then feed it back to the environment, to control the movement of the car. 
+   The illustration comprises two parts, a 2D environment described above,
+   and a learning algorithm which controls the action of the car.
+   The algorithm learns from and makes decisions on specified data provided by the environment.
+   The environment emulates 5 state sensors,
+   corresponding to 5 different direction in front of the car.
+   These sensors find the nearest obstacle,
+   and measure the distance from the obstacle to the car.
+   The distance information is transferred to the car in the form of a 5D vector.
+   During running, the algorithm will predict an action based on the distance information 
+   and then feed it back to the environment, to control the movement of the car. 
  
 ** Re-Implementation
    For our further research, we need a verified code base to start with. 
@@ -56,40 +61,53 @@ $$Q(s_{t},a_{t})\leftarrow \underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}+\unde
    #+NAME:   fig:reimplementation_structure
    file:images/reimplementation_structure.png
  
-   It includes 3 steps.
+   The implementation takes 3 steps.
    - Build an environment.
    - Implement a reinforcement learning algorithm to control the car.
    - Provide and transfer learning data and actions between the environment and the algorithm.
 
-*** The Environment
-   We choose to build this 2D environment on a 3D rendering engine. 
-   It is for the convenience of later transition.
-   Because our later goal is to train the car to avoid obstacles in 3D environments. 
-**** Panda3D 
-**** Layout 
+*** Reinforcement Learning 
+    We started this part with a project on Github.com.
+    In further research, we will build a variant algorithm of the deep q network.
+    So we choose this implementation of deep q network as the code base of our reinforcement learning algorithm.
+    This implementation is written in python, and based on Theano and Lasagne.
 
+    - Paper :: http://arxiv.org/abs/1312.5602
+    - Code :: https://github.com/spragunr/deep_q_rl
+**** Adaptation
+     The deep q network takes the raw images of a game as its inputs to predict actions.
+     The network includes convolutional layers to handle the image data.
+     But the current environment provides only distance information, 
+     in the form of a vector, 
+     instead of the raw images.
+     So we replaced the convolutional neural network with a simple multi-layer neural network,
+     to handle the distance information.
+*** The Environment
+    We choose to build this 2D environment on a real-time 3D rendering engine. 
+    It is for the convenience of later transition.
+    Because our later goal is to train the car to avoid obstacles in 3D environments. 
+**** Panda3D
+     The 3D rendering task is assigned to Panda3D, a game development environment.
+     It is written in C++ and supports both C++ and python.
+
+**** Layout 
+     
      #+CAPTION: A 3D view
      #+ATTR_LATEX: :width 10cm
      #+NAME:   fig:screenshot_stereo
      file:images/screenshot_stereo.png
 
-     #+CAPTION: (mark the poles)(Green circle/blue lines remove later) Different Red shapes are obstaclesi Green destination(remove)Blue line routes (remove)
+     #+CAPTION: A top-down view. Red shapes represents obstacles. (mark the poles later)(Green circle/blue lines remove later) Green destination(remove)Blue line routes (remove)
      #+ATTR_LATEX: :width 10cm
      #+NAME:   fig:screenshot_layout_2D
      file:images/screenshot_layout_2D.png
 
-     A cube room. 
-     A (round) pole at the left bottom corner. Another (square) pole at the top right
-     Randomly positioned chess pieces (200-400) (maybe overlapped)
- 
- 
- 
-*** Reinforcement Learning 
-    We started this part with a project on Github.com
-    - Paper :: http://arxiv.org/abs/1312.5602
-    - Code :: https://github.com/spragunr/deep_q_rl
+     As shown in Figure [[fig:screenshot_stereo]], the scenario is located in a cubic room.
+     A round pole is fixed at the left bottom corner (Figure [[fig:screenshot_layout_2D]]).
+     And a square pole is fixed at the top right corner.
+     200 chess pieces are randomly positioned in the room.
 *** Learning Data
-****  a
+**** a
  
 ·         Extracting depth maps (
 Goal: E (distance) => Q )
@@ -98,7 +116,7 @@ Convenient Method: depth map => distance
 What is depth map? Figure ???
 How to generate from 3d models
 How to extract distance from depth map. Figure ???
- 
+
 然后,截取地平线的部分(Figure 3),作为对视频中的一维距离信息的模拟,发送给agent
 在场景中,当agent遇到障碍物的时候,场景会发送惩罚信号给agent.
 Figure 1: agent视角的虚拟三维环境,通过三维引擎的立体视觉模式加入了左右两个视角
@@ -108,35 +126,13 @@ o   Reimplement q-learning
 o   Feeding distance to q-learning
 Different Implementaion
 o   Data: volume??
-
+*** Training
+**** Random Actions
 *** Results and discussion:
-  o   在满是障碍物的地图上,agent很明显的可以在较长的一段时间中避开障碍物. 但是并不能做到在所以情形下完全避开障碍物.
-  o   1.2.5.1 问题
-  o   我们缺乏有效的指标判断训练结果的有效性. 障碍物地图是随机生成的,有些情况下agent可能陷入无法避开障碍物的情形.但是我们缺乏手段评估哪些障碍物环境是属于这一类别的.
-  o   在参数调整的后期,很难根据agent不碰撞的时间长度来判断算法的优劣
- 
-* a
-
-由于我们的最终目标是训练agent学会在三维空间中避障. 因此,出于便利性的考虑,我们在这个阶段已经完成了三维虚拟环境(Figure 1), 但是在算法中仍然将其视作一个二维空间,模拟成视频中的场景
- 
-* a
-连接虚拟环境和DQN算法
-原本的github上的DQN程序是和Atari模拟器对接的. 在完成了虚拟环境之后,我们使用这个虚拟环境替换掉了Atari模拟器. 由于输入从Atari的二维画面转换成了一维的距离信息,我们也把DQN中的cnn替换成了普通的多层神经网络.
-1.2.4 训练
-1.2.4.1 随机行为
-一般的强化学习算法一样,最初阶段agent的行为是被设定为随机的,以此来积累周围环境的知识.
-
-·        Q learning
-Describe:
-·        illustrated in Figure 1.2: from youtube
- Action 
-Action value function
-
-
-
-     
-         Figure 1.2
-Describe the method used in the video
-  
-
-    
+    在满是障碍物的地图上,agent很明显的可以在较长的一段时间中避开障碍物. 但是并不能做到在所以情形下完全避开障碍物.
+**** Problems
+     我们缺乏有效的指标判断训练结果的有效性. 障碍物地图是随机生成的,有些情况下agent可能陷入无法避开障碍物的情形.但是我们缺乏手段评估哪些障碍物环境是属于这一类别的.
+     在参数调整的后期,很难根据agent不碰撞的时间长度来判断算法的优劣
+   
+   
+   
