@@ -103,12 +103,12 @@ Q(s_{t},a_{t})\
      #+CAPTION: A 3D first person view of the car
      #+ATTR_LATEX: :width 10cm
      #+NAME:   fig:screenshot_first_person
-     file:images/screenshot_first_person.png
+     [[file:images/screenshot_first_person.png]]
 
      #+CAPTION: A top-down view. Red shapes represents obstacles. (mark the poles later)(Green circle/blue lines remove later) Green destination(remove)Blue line routes (remove)
      #+ATTR_LATEX: :width 10cm
      #+NAME:   fig:screenshot_layout_2D
-     file:images/screenshot_layout_2D.png
+     [[file:images/screenshot_layout_2D.png]]
 
      As shown in Figure [[fig:screenshot_first_person]], the scenario is located in a cubic room.
      A round pole is fixed at the left bottom corner (Figure [[fig:screenshot_layout_2D]]).
@@ -120,14 +120,14 @@ Q(s_{t},a_{t})\
     #+CAPTION: cropping the horizontal line from the depth map
     #+ATTR_LATEX: :width 5cm
     #+NAME:   fig:screenshot_first_person
-    file:images/depth_map_1d.png
+    [[file:images/depth_map_1d.png]]
 
 **** Depth Map
 
      #+CAPTION: A depth map. Light colors represents for rear objects. Dark colors represents for near objects.
      #+ATTR_LATEX: :width 5cm
      #+NAME:   fig:depth_map
-     file:images/depth_map.png
+     [[file:images/depth_map.png]]
 
      A depth map is a type of distance information.
      Like a raw image, it can be represented by a real-valued matrix. 
