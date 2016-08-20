@@ -18,7 +18,7 @@ Q(s_{t},a_{t})\
    #+CAPTION: youtube_screenshot
    #+ATTR_LATEX: :width 10cm
    #+NAME:   fig:youtube_screenshot
-   file:images/youtube_screenshot.png
+   [[file:images/youtube_screenshot.png]]
    
    The video illustrates a car learning to avoid obstacles. 
    As shown in Figure [[fig:youtube_screenshot]], the environment is a 2D scenario.
