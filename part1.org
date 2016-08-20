@@ -39,7 +39,7 @@ Q(s_{t},a_{t})\
    #+CAPTION: youtube_structure
    #+ATTR_LATEX: :width 10cm
    #+NAME:   fig:youtube_structure
-   file:images/youtube_structure.png
+   [[file:images/youtube_structure.png]]
  
    The illustration comprises two parts, a 2D environment described above,
    and a learning algorithm which controls the action of the car.
@@ -59,7 +59,7 @@ Q(s_{t},a_{t})\
    #+CAPTION: structure
    #+ATTR_LATEX: :width 10cm
    #+NAME:   fig:reimplementation_structure
-   file:images/reimplementation_structure.png
+   [[file:images/reimplementation_structure.png]]
  
    The implementation takes 3 steps.
    - Build an environment.
