@@ -71,8 +71,8 @@ Q(s_{t},a_{t})\
     In further research, we will build a variant algorithm of the deep q network.
     So we choose this implementation of deep q network as the code base of our reinforcement learning algorithm.
     This implementation is written in python, and based on Theano and Lasagne.
-    - Paper :: http://arxiv.org/abs/1312.5602
-    - Code :: https://github.com/spragunr/deep_q_rl
+    - Paper :: [[http://arxiv.org/abs/1312.5602]]
+    - Code :: [[https://github.com/spragunr/deep_q_rl]]
 **** Adaptation
      The deep q network takes the raw images of a game as its inputs to predict actions.
      The network includes convolutional layers to handle the image data.
@@ -159,7 +159,3 @@ Q(s_{t},a_{t})\
 **** Problems
      我们缺乏有效的指标判断训练结果的有效性. 障碍物地图是随机生成的,有些情况下agent可能陷入无法避开障碍物的情形.但是我们缺乏手段评估哪些障碍物环境是属于这一类别的.
      在参数调整的后期,很难根据agent不碰撞的时间长度来判断算法的优劣
-   
-   
-   
-     
