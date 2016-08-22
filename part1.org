@@ -148,13 +148,34 @@ Q(s_{t},a_{t})\
      in contrast to the only 5 state sensors existing in the original video.  
 
 **** Collision Detection
-     We use a physics engine Bullet to detect collisions and send signals to the agent.
-     This is one of the physics engine integrated with Panda3D.
-     A physics engine is a simulation software for physical systems. 
-     For example, in rigid body dynamics, 
-     the engine detects collisions of different objects, 
-     and calculates the results of the collisions.
-     But in this experiments, only the collision detection function is required.
+     Collision detection is normally a part of a physics engine and 
+     there are several physics engines integrated within Panda3D.  
+***** Built-In Engine of Panda3D
+      There are two ways to go about collision detection. One is to manually create simple
+      collision geometries, like spheres and polygons,  for the obstacles.
+      Panda3D offers built-in collision detection that calculates the impacts 
+      between these geometries. 
+      It is fast, but unable to precisely depict collisions of 
+      complex models. When the agent is only allowed to move around on
+      the 2D plane of our virtual room, this method works fine. 
+      Because all the models can be precisely depicted by circles and lines 
+      in a top-down view. 
+***** Bullet
+      Another way is to create collision geometries for any models used for 
+      graphic rendering. Panda3D offers interface for the physics engine Bullet,
+      and Bullet can generate these collision geometries. 
+      But it was found that Bullet cannot precisely detect collisions with these 
+      auto-generated geometries. 
+      Bullet might send signals of collisions 
+      when collisions actually didn't happen. 
+      We have applied the same machine learning algorithms on both engines in a scenario, which allows the 
+      agent to move on a 2D plane only. 
+      Comparing to the built-in engine of Panda3D,
+      Bullet's collision detection lowered down the quality of the training samples seriously, 
+      and eventually prevented our attempts to train machine learning models with Bullet.
+      And with the built-in engine, we have to restrict the agent's movement on the 2D plane to 
+      keep the complexity of collision detection at a low level, which can be handled as simple 
+      geometries.
 *** Training
 **** Random Actions
 *** Results and discussion:
