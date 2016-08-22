@@ -118,7 +118,7 @@ Q(s_{t},a_{t})\
 
 *** Learning Data
     Required learning data includes distance information and collision signals.
-**** Depth Map
+**** Depth Maps
      Within a 3D render engine, a convenient way to generate distance information 
      is to extract a depth map from the 3D models.
 
@@ -147,19 +147,14 @@ Q(s_{t},a_{t})\
      and the size of the distance information vector is 90 
      in contrast to the only 5 state sensors existing in the original video.  
 
-**** 
- How to generate from 3d models
- How to extract distance from depth map. Figure ???
-
- 然后,截取地平线的部分(Figure 3),作为对视频中的一维距离信息的模拟,发送给agent
- 在场景中,当agent遇到障碍物的时候,场景会发送惩罚信号给agent.
- Figure 1: agent视角的虚拟三维环境,通过三维引擎的立体视觉模式加入了左右两个视角
- Figure 2: depth map generated from 3d models
- Figure 3: 截取地平线的部分生成一维的深度信息
- o   Reimplement q-learning
- o   Feeding distance to q-learning
- Different Implementaion
- o   Data: volume??
+**** Collision Detection
+     We use a physics engine Bullet to detect collisions and send signals to the agent.
+     This is one of the physics engine integrated with Panda3D.
+     A physics engine is a simulation software for physical systems. 
+     For example, in rigid body dynamics, 
+     the engine detects collisions of different objects, 
+     and calculates the results of the collisions.
+     But in this experiments, only the collision detection function is required.
 *** Training
 **** Random Actions
 *** Results and discussion:
