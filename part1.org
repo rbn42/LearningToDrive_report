@@ -180,7 +180,7 @@ Q(s_{t},a_{t})\
       geometries.
 *** Training
 **** Random Actions
-*** Results and discussion:
+*** Results and discussion
     在满是障碍物的地图上,agent很明显的可以在较长的一段时间中避开障碍物. 但是并不能做到在所以情形下完全避开障碍物.
 **** Problems
      我们缺乏有效的指标判断训练结果的有效性. 障碍物地图是随机生成的,有些情况下agent可能陷入无法避开障碍物的情形.但是我们缺乏手段评估哪些障碍物环境是属于这一类别的.
