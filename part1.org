@@ -1,5 +1,4 @@
 #+OPTIONS: H:7
-     We use Panda3D to generate the 
 #+LaTeX_CLASS: koma-article
 #+TITLE: My little document
 
@@ -95,10 +94,6 @@ Q(s_{t},a_{t})\
       To make this process more efficient, we want to be able to transfer image data as an intra-process pointer.
       Choosing python as the programming language for both the environment and the learning model 
       will allows us to conveniently implement this mechanism.
-**** Models
-     The 3D models used to build the 3D environment come from Panda3D's example games.
-     - The models of the room are provided by the example bump-mapping. 
-     - The models of the chess pieces are provided by the example chessboard.
 **** Layout 
      
      #+CAPTION: A 3D first person view of the car
@@ -112,10 +107,17 @@ Q(s_{t},a_{t})\
      [[file:images/screenshot_layout_2D.png]]
 
      As shown in Figure [[fig:screenshot_first_person]], the scenario is located in a cubic room.
+     The size of the room is 120x120.
      A round pole is fixed at the left bottom corner (Figure [[fig:screenshot_layout_2D]]).
-     And a square pole is fixed at the top right corner.
+     Its radius is 12.5.
+     And a square pole is fixed at the top right corner. 
+     Its area size is 40x40.
      200 chess pieces are randomly positioned in the room.
-
+     Their radius distribute randomly between 0.5 and 5.
+**** Models
+     The 3D models used to build the 3D environment come from Panda3D's example games.
+     - The models of the room are provided by the example bump-mapping. 
+     - The models of the chess pieces are provided by the example chessboard.
 *** Learning Data
     Required learning data includes distance information and collision signals.
 **** Depth Maps
