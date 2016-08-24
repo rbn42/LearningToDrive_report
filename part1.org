@@ -104,7 +104,7 @@ Q(s_{t},a_{t})\
      #+NAME:   fig:screenshot_first_person
      [[file:images/screenshot_first_person.png]]
 
-     #+CAPTION: A top-down view. Red shapes represents obstacles. (mark the poles later)(Green circle/blue lines remove later) Green destination(remove)Blue line routes (remove)
+     #+CAPTION: A top-down view of a layout. Red shapes represents for obstacles. (mark the poles later)(Green circle/blue lines remove later) Green destination(remove)Blue line routes (remove)
      #+ATTR_LATEX: :width 10cm
      #+NAME:   fig:screenshot_layout_2D
      [[file:images/screenshot_layout_2D.png]]
@@ -157,7 +157,6 @@ Q(s_{t},a_{t})\
      In our experiments, the pixel size of the depth map is 90x90 
      and the size of the distance information vector is 90, 
      in contrast to the only 5 state sensors existing in the original video.  
-
 **** Collision Detection
      Collision detection is normally a part of a physics engine and 
      there are several physics engines integrated within Panda3D.  
@@ -207,9 +206,12 @@ Q(s_{t},a_{t})\
      The pool has a fixed size. When its maximum size is reached, old data will be removed.
      The training phase will randomly pick data from the pool.
 *** Results and discussion
-    Most of the time, the agent is able to survive and avoid obstacles for over 10,000 steps
+    Most of the time, the agent is able to survive and avoid obstacles for over 10,000 steps.
 **** Problems
      We lacks efficient results verification methods. 
-     The only indicator is the length of the agent's survival time,
-     which varies largely with different obstacles layouts.
+     The only indicator is the length of the agent's survival time.
+     It varies largely with different layouts of obstacles, 
+     and takes a long time to verify.
+     Because the fps of the environment is fixed at 60.
+     A single run of simulation over 10,000 steps will consume more than 10 minutes.
      
