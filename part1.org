@@ -207,9 +207,9 @@ Q(s_{t},a_{t})\
      The pool has a fixed size. When its maximum size is reached, old data will be removed.
      The training phase will randomly pick data from the pool.
 *** Results and discussion
-    在满是障碍物的地图上,agent很明显的可以在较长的一段时间中避开障碍物. 但是并不能做到在所以情形下完全避开障碍物.
-**** Expected Convergent Result
+    Most of the time, the agent is able to survive and avoid obstacles for over 10,000 steps
 **** Problems
-     我们缺乏有效的指标判断训练结果的有效性. 障碍物地图是随机生成的,有些情况下agent可能陷入无法避开障碍物的情形.但是我们缺乏手段评估哪些障碍物环境是属于这一类别的.
-     在参数调整的后期,很难根据agent不碰撞的时间长度来判断算法的优劣
+     We lacks efficient results verification methods. 
+     The only indicator is the length of the agent's survival time,
+     which varies largely with different obstacles layouts.
      
