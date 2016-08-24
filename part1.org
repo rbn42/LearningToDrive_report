@@ -3,8 +3,8 @@
 #+TITLE: My little document
 
 * root
-** Reinforcement Learning TODO
-***  Q Learning 
+** TODO Reinforcement Learning
+*** Q Learning 
 $$
 Q(s_{t},a_{t})\
 \leftarrow\
