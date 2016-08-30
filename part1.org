@@ -193,7 +193,6 @@ Q(s_{t},a_{t})\
     #+NAME:   fig:nn_wiki
     [[file:images/Artificial_neural_network.png]]
 
-
 **** Rewarding Rules
      For non-collision frames, the rewards are 0.0. 
      For collision frames, the rewards are -1.0.
