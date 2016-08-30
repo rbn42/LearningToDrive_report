@@ -189,19 +189,20 @@ Q(s_{t},a_{t})\
 *** Training Strategy
    
     #+CAPTION: Multi-Layer Neural Network(wikipedia.org)
+    #+attr_html: :width 100%
     #+ATTR_LATEX: :width 10cm
     #+NAME:   fig:nn_wiki
     [[file:images/Artificial_neural_network.png]]
    
     #+CAPTION: Multi-Layer Neural Network
-    #+ATTR_LATEX: :width 10cm
+    #+attr_html: :width 100%
     #+NAME:   fig:nn_2d
     [[file:images/nn_2d.digraph.png]]
 
      #+BEGIN_SRC python -n -r
 input_layer = DataLayer()
 # normalize input data
-input_layer = Layer(input_layer, fun=lambda x: (x - T.mean(x)) / T.std(x)) (ref:sc)
+input_layer = Layer(input_layer, filter=lambda x: (x - T.mean(x)) / T.std(x)) (ref:sc)
 
 layer1 = DenseLayer(input_layer=input_layer, n_in=84,
                     n_out=32, std=.005, bias=0)
@@ -212,14 +213,9 @@ layer2 = Sigmoid(layer2)
 
 output_layer = DenseLayer(input_layer=layer2, n_in=32,
                           n_out=n_actions, std=.005, bias=0)
-
      #+END_SRC
      In line [[(sc)]] we remember the current position.  [[(jump)][Line (jump)]]
      jumps to point-min.
-
-
-
-
 
 **** Rewarding Rules
      For non-collision frames, the rewards are 0.0. 

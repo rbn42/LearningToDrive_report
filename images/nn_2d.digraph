@@ -6,10 +6,20 @@ digraph G {
         http://www.graphviz.org/Gallery.php
         */
 
+        /*
+        rankdir=BT
+        BT方向比较好,和bottom layer这样的叙述吻合.
+        但是BT方向的group label的位置不对,除非能调整才能用.
+        */
         rankdir=LR
 	splines=line
         nodesep=.3;
         
+        /*
+        去除连接方向
+        */
+        edge [dir=none]
+
         /*
         通过label选项隐藏label
         */
@@ -45,6 +55,7 @@ digraph G {
 		LEFT FORWARD RIGHT;
 		label="OUTPUT ACTIONS\n3 units";
 	}
+
 
         x1 -> a12;
         x1 -> a22;
