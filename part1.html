@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-08-31 Wed 07:38 -->
+<!-- 2016-08-31 Wed 08:25 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>My little document</title>
@@ -569,25 +569,22 @@ geometries.
 
 <div class="org-src-container">
 
-<pre class="src src-python"><span style="color: #ffff00;">input_layer</span> = DataLayer()
-<span style="color: #ff0000;"># </span><span style="color: #ff0000;">normalize input data</span>
-<span id="coderef-sc" class="coderef-off"><span style="color: #ffff00;">input_layer</span> = Layer(input_layer, <span style="color: #0000ff; font-weight: bold;">filter</span>=<span style="color: #00ffff; font-weight: bold;">lambda</span> x: (x - T.mean(x)) / T.std(x)) (sc)</span>
-
-<span style="color: #ffff00;">layer1</span> = DenseLayer(input_layer=input_layer, n_in=84,
-                    n_out=32, std=.005, bias=0)
-<span id="coderef-jump" class="coderef-off"><span style="color: #ffff00;">layer1</span> = Sigmoid(layer1) (jump)</span>
-
-<span style="color: #ffff00;">layer2</span> = DenseLayer(input_layer=layer1, n_in=32, n_out=32, std=.005, bias=0)
-<span style="color: #ffff00;">layer2</span> = Sigmoid(layer2)
-
-<span style="color: #ffff00;">output_layer</span> = DenseLayer(input_layer=layer2, n_in=32,
-                          n_out=n_actions, std=.005, bias=0)
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #ffff00;">input_layer</span> = DataLayeaar()
+<span class="linenr"> 2: </span><span style="color: #ff0000;"># </span><span style="color: #ff0000;">normalize input data</span>
+<span class="linenr"> 3: </span><span style="color: #ffff00;">input_layer</span> = Layer(input_layer, <span style="color: #0000ff; font-weight: bold;">filter</span>=<span style="color: #00ffff; font-weight: bold;">lambda</span> x: (
+<span class="linenr"> 4: </span>    x - T.mean(x)) / T.std(x))
+<span class="linenr"> 5: </span>
+<span class="linenr"> 6: </span><span style="color: #ffff00;">layer1</span> = DenseLayer(input_layer=input_layer, n_in=84,
+<span class="linenr"> 7: </span>                    n_out=32, std=.005, bias=0)
+<span class="linenr"> 8: </span><span style="color: #ffff00;">layer1</span> = ReLU(layer1)
+<span class="linenr"> 9: </span>
+<span class="linenr">10: </span><span style="color: #ffff00;">layer2</span> = DenseLayer(input_layer=layer1, n_in=32, n_out=32, std=.005, bias=0)
+<span class="linenr">11: </span><span style="color: #ffff00;">layer2</span> = ReLU(layer2)
+<span class="linenr">12: </span>
+<span class="linenr">13: </span><span style="color: #ffff00;">output_layer</span> = DenseLayer(input_layer=layer2, n_in=32,
+<span class="linenr">14: </span>                          n_out=n_actions, std=.005, bias=0)
 </pre>
 </div>
-<p>
-In line <a href="#coderef-sc"class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-sc');" onmouseout="CodeHighlightOff(this, 'coderef-sc');">sc</a> we remember the current position.  <a href="#coderef-jump"class="coderef" onmouseover="CodeHighlightOn(this, 'coderef-jump');" onmouseout="CodeHighlightOff(this, 'coderef-jump');">Line jump</a>
-jumps to point-min.
-</p>
 </div>
 
 <div id="outline-container-orgheadline19" class="outline-5">
@@ -658,7 +655,7 @@ A single run of simulation over 10,000 steps will consume more than 10 minutes.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-08-31 Wed 07:38</p>
+<p class="date">Created: 2016-08-31 Wed 08:25</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
