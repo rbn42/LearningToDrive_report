@@ -18,21 +18,21 @@ digraph G {
 		color=white;
                 node [style=solid,color=blue4, shape=circle,label=""];
 		x1 x2 x3;
-		label = "DISTANCE INFORMATION";
+		label = "DISTANCE INFORMATION \n84 units";
 	}
 
 	subgraph cluster_1 {
 		color=white;
 		node [style=solid,color=red2, shape=circle,label=""];
 		a12 a22 a32 a42 a52;
-		label = "HIDDEN LAYER";
+		label = "HIDDEN LAYER\n32 units";
 	}
 
 	subgraph cluster_2 {
 		color=white;
 		node [style=solid,color=red2, shape=circle,label=""];
 		a13 a23 a33 a43 a53;
-		label = "HIDDEN LAYER";
+		label = "HIDDEN LAYER\n32 units";
 	}
 
         /*
@@ -43,7 +43,7 @@ digraph G {
 		color=white;
 		node [fixedsize=true,style=solid,color=seagreen2, shape=circle];
 		LEFT FORWARD RIGHT;
-		label="OUTPUT ACTIONS";
+		label="OUTPUT ACTIONS\n3 units";
 	}
 
         x1 -> a12;
