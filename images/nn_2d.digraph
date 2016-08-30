@@ -1,9 +1,18 @@
 digraph G {
+        /*
+        source 
+        https://tgmstat.wordpress.com/2013/06/12/draw-neural-network-diagrams-graphviz/
+        examples
+        http://www.graphviz.org/Gallery.php
+        */
 
         rankdir=LR
 	splines=line
         nodesep=.3;
         
+        /*
+        通过label选项隐藏label
+        */
         
         subgraph cluster_0 {
 		color=white;
@@ -25,6 +34,10 @@ digraph G {
 		a13 a23 a33 a43 a53;
 		label = "HIDDEN LAYER";
 	}
+
+        /*
+        通过fixedsize限定circle大小,否则,circle会依据label长度改变大小
+        */
 
 	subgraph cluster_3 {
 		color=white;
