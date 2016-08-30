@@ -1,4 +1,4 @@
-input_layer = DataLayeaar()
+input_layer = DataLayer()
 # normalize input data
 input_layer = Layer(input_layer, filter=lambda x: (x - T.mean(x)) / T.std(x))
 
