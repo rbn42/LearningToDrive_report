@@ -17,8 +17,8 @@ digraph G {
         
         /*
         去除连接方向
-        */
         edge [dir=none]
+        */
 
         /*
         通过label选项隐藏label
