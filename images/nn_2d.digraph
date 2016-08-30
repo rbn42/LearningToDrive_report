@@ -2,36 +2,35 @@ digraph G {
 
         rankdir=LR
 	splines=line
-        nodesep=.05;
+        nodesep=.3;
         
-        node [label=""];
         
         subgraph cluster_0 {
 		color=white;
-                node [style=solid,color=blue4, shape=circle];
+                node [style=solid,color=blue4, shape=circle,label=""];
 		x1 x2 x3;
-		label = "layer 1";
+		label = "DISTANCE INFORMATION";
 	}
 
 	subgraph cluster_1 {
 		color=white;
-		node [style=solid,color=red2, shape=circle];
+		node [style=solid,color=red2, shape=circle,label=""];
 		a12 a22 a32 a42 a52;
-		label = "layer 2";
+		label = "HIDDEN LAYER";
 	}
 
 	subgraph cluster_2 {
 		color=white;
-		node [style=solid,color=red2, shape=circle];
+		node [style=solid,color=red2, shape=circle,label=""];
 		a13 a23 a33 a43 a53;
-		label = "layer 3";
+		label = "HIDDEN LAYER";
 	}
 
 	subgraph cluster_3 {
 		color=white;
-		node [style=solid,color=seagreen2, shape=circle];
-		O1 O2 O3 O4;
-		label="layer 4";
+		node [fixedsize=true,style=solid,color=seagreen2, shape=circle];
+		LEFT FORWARD RIGHT;
+		label="OUTPUT ACTIONS";
 	}
 
         x1 -> a12;
@@ -82,29 +81,23 @@ digraph G {
         a42 -> a53
         a52 -> a53
 
-        a13 -> O1
-        a23 -> O1
-        a33 -> O1
-        a43 -> O1
-        a53 -> O1
+        a13 -> LEFT
+        a23 -> LEFT
+        a33 -> LEFT
+        a43 -> LEFT
+        a53 -> LEFT
 
-        a13 -> O2
-        a23 -> O2
-        a33 -> O2
-        a43 -> O2
-        a53 -> O2
+        a13 -> RIGHT
+        a23 -> RIGHT
+        a33 -> RIGHT
+        a43 -> RIGHT
+        a53 -> RIGHT
 
-        a13 -> O3
-        a23 -> O3
-        a33 -> O3
-        a43 -> O3
-        a53 -> O3
-
-        a13 -> O4
-        a23 -> O4
-        a33 -> O4
-        a43 -> O4
-        a53 -> O4
+        a13 -> FORWARD
+        a23 -> FORWARD
+        a33 -> FORWARD
+        a43 -> FORWARD
+        a53 -> FORWARD
 
 
 
