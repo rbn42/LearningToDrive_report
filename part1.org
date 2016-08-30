@@ -187,6 +187,13 @@ Q(s_{t},a_{t})\
       keep the complexity of collision detection at a low level, which can be handled as simple 
       geometries.
 *** Training Strategy
+   
+    #+CAPTION: Multi-Layer Neural Network(wikipedia.org)
+    #+ATTR_LATEX: :width 10cm
+    #+NAME:   fig:nn_wiki
+    [[file:images/Artificial_neural_network.png]]
+
+
 **** Rewarding Rules
      For non-collision frames, the rewards are 0.0. 
      For collision frames, the rewards are -1.0.
