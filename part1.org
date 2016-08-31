@@ -206,17 +206,18 @@ Q(s_{t},a_{t})\
     At the beginning, the neural network of the action value function will be randomly initialized.
     Its prediction accuracy will be improved by the knowledge of the environment.
     The knowledge of the environment comes as the form of the order of states and the corresponding rewards.
-    We use these knowledge to update the action value function by Q-Learning algorithm.
+    These knowledge will be used to update the action value function by this Q-Learning algorithm [[eqn:qlearning]].
 
-    
-    $$
+#+NAME: eqn:qlearning
+\begin{equation}
     Q(s_{t},a_{t})\
     \leftarrow\
     \underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}\
     +\underbrace {\alpha } _{\rm {learning~rate}}\
     \cdot \left(\
-    \overbrace {\underbrace {r_{t+1}} _{\rm {reward}}+\underbrace {\gamma } _{\rm {discount~factor}}\cdot \underbrace {\max _{a}Q(s_{t+1},a)} _{\rm {estimate~of~optimal~future~value}}} ^{\rm {learned~value}}-\underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}\right)  (from wikipedia)$$
-    
+    \overbrace {\underbrace {r_{t+1}} _{\rm {reward}}+\underbrace {\gamma } _{\rm {discount~factor}}\cdot \underbrace {\max _{a}Q(s_{t+1},a)} _{\rm {estimate~of~optimal~future~value}}} ^{\rm {learned~value}}-\underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}\right)  (from wikipedia)
+\end{equation}
+
     
     #+CAPTION: Multi-Layer Neural Network(wikipedia.org)
     #+attr_html: :width 100%
