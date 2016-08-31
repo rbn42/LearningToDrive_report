@@ -186,7 +186,26 @@ Q(s_{t},a_{t})\
       And with the built-in engine, we have to restrict the agent's movement on the 2D plane to 
       keep the complexity of collision detection at a low level, which can be handled as simple 
       geometries.
-*** Training Strategy
+*** TODO Training Strategy
+    Distance information are provided by the environment as the states of the 
+    environment to the agent.
+    The agent is required make action decisions based on these state data.
+
+    This is done by guiding the agent with a rewarding rule set.
+    A rewarding rule set defines rewards of real values 
+    for each action made in the environment by the agent.
+    Under these rules, the agent is required to pursue the maximum rewards of the future, 
+    which is a weighted sum of the rewards of all the future states. 
+
+    To find out the actions which leads to the maximum future rewards,
+    The agent needs to predict the future rewards of all the allowed actions.
+    The prediction function is called an action value function, and denoted as 
+    $Q(s,a)$. $s$ and $a$ are the corresponding state and action.
+    In our program, the action value function is a neural network.
+
+    At the beginning, the neural network of the action value function will be randomly initialized.
+    Its prediction accuracy will be improved by 
+
    
     #+CAPTION: Multi-Layer Neural Network(wikipedia.org)
     #+attr_html: :width 100%

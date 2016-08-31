@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-08-31 Wed 08:30 -->
+<!-- 2016-09-01 Thu 08:36 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>My little document</title>
@@ -209,7 +209,7 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgheadline23">1.3.4. Training Strategy</a>
+<li><a href="#orgheadline23">1.3.4. <span class="todo TODO">TODO</span> Training Strategy</a>
 <ul>
 <li><a href="#orgheadline19">1.3.4.1. Rewarding Rules</a></li>
 <li><a href="#orgheadline20">1.3.4.2. Allowed Actions</a></li>
@@ -551,8 +551,38 @@ geometries.
 </div>
 </div>
 <div id="outline-container-orgheadline23" class="outline-4">
-<h4 id="orgheadline23"><span class="section-number-4">1.3.4</span> Training Strategy</h4>
+<h4 id="orgheadline23"><span class="section-number-4">1.3.4</span> <span class="todo TODO">TODO</span> Training Strategy</h4>
 <div class="outline-text-4" id="text-1-3-4">
+<p>
+Distance information are provided by the environment as the states of the 
+environment to the agent.
+The agent is required make action decisions based on these state data.
+</p>
+
+<p>
+This is done by guiding the agent with a rewarding rule set.
+A rewarding rule set defines rewards of real values 
+for each action made in the environment by the agent.
+Under these rules, the agent is required to pursue the largest rewards of the future. 
+To find out the actions which leads to the largest future rewards,
+The agent needs to predict the future rewards of all the allowed actions.
+The prediction function is called action value function, and denoted as 
+\(Q(s,a)\). \(s\) and \(a\) are the corresponding state and action.
+</p>
+
+
+
+
+
+<p>
+In order to guide the agent to avoid obstacles, 
+a simple rewarding rule set is designed.
+</p>
+
+
+
+
+
 
 <div id="orgparagraph8" class="figure">
 <p><img src="images/Artificial_neural_network.png" alt="Artificial_neural_network.png" width="100%" />
@@ -654,7 +684,7 @@ A single run of simulation over 10,000 steps will consume more than 10 minutes.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-08-31 Wed 08:30</p>
+<p class="date">Created: 2016-09-01 Thu 08:36</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
