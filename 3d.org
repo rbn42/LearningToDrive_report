@@ -1,0 +1,9 @@
+
+* root
+
+* 3d到2d的差别
+  - 从普通神经网络到DL
+    用到的东西
+  - depth map的转换. 
+    我从3d引擎,得到的depthmap
+  - depthmap 和矩阵的对应图解
