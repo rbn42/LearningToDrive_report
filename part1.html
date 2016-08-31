@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2016-09-01 Thu 08:36 -->
+<!-- 2016-09-01 Thu 08:59 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="viewport" content="width=device-width, initial-scale=1" />
 <title>My little document</title>
@@ -563,25 +563,39 @@ The agent is required make action decisions based on these state data.
 This is done by guiding the agent with a rewarding rule set.
 A rewarding rule set defines rewards of real values 
 for each action made in the environment by the agent.
-Under these rules, the agent is required to pursue the largest rewards of the future. 
-To find out the actions which leads to the largest future rewards,
-The agent needs to predict the future rewards of all the allowed actions.
-The prediction function is called action value function, and denoted as 
-\(Q(s,a)\). \(s\) and \(a\) are the corresponding state and action.
+Under these rules, the agent is required to pursue the maximum rewards of the future, 
+which is a weighted sum of the rewards of all the future states. 
 </p>
 
+<p>
+To find out the actions which leads to the maximum future rewards,
+The agent needs to predict the future rewards of all the allowed actions.
+The prediction function is called an action value function, and denoted as 
+\(Q(s,a)\). \(s\) and \(a\) are the corresponding state and action.
+In our program, the action value function is a neural network.
+</p>
 
-
+<p>
+At the beginning, the neural network of the action value function will be randomly initialized.
+Its prediction accuracy will be improved by the knowledge of the environment.
+The knowledge of the environment comes as the form of the relation and the order of states and rewards.
+We use these knowledge to update the action value function by
+</p>
 
 
 <p>
-In order to guide the agent to avoid obstacles, 
-a simple rewarding rule set is designed.
+\[
+    Q(s_{t},a_{t})\
+    \leftarrow\
+    \underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}\
+    +\underbrace {\alpha } _{\rm {learning~rate}}\
+    \cdot \left(\
+    \overbrace {\underbrace {r_{t+1}} _{\rm {reward}}+\underbrace {\gamma } _{\rm {discount~factor}}\cdot \underbrace {\max _{a}Q(s_{t+1},a)} _{\rm {estimate~of~optimal~future~value}}} ^{\rm {learned~value}}-\underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}\right)  (from wikipedia)\]
 </p>
 
-
-
-
+<p>
+asfd
+</p>
 
 
 <div id="orgparagraph8" class="figure">
@@ -684,7 +698,7 @@ A single run of simulation over 10,000 steps will consume more than 10 minutes.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2016-09-01 Thu 08:36</p>
+<p class="date">Created: 2016-09-01 Thu 08:59</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

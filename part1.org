@@ -189,7 +189,7 @@ Q(s_{t},a_{t})\
 *** TODO Training Strategy
     Distance information are provided by the environment as the states of the 
     environment to the agent.
-    The agent is required make action decisions based on these state data.
+    The agent is required to make action decisions based on these state data.
 
     This is done by guiding the agent with a rewarding rule set.
     A rewarding rule set defines rewards of real values 
@@ -204,9 +204,21 @@ Q(s_{t},a_{t})\
     In our program, the action value function is a neural network.
 
     At the beginning, the neural network of the action value function will be randomly initialized.
-    Its prediction accuracy will be improved by 
+    Its prediction accuracy will be improved by the knowledge of the environment.
+    The knowledge of the environment comes as the form of the order of states and the corresponding rewards.
+    We use these knowledge to update the action value function by
 
-   
+    
+    $$
+    Q(s_{t},a_{t})\
+    \leftarrow\
+    \underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}\
+    +\underbrace {\alpha } _{\rm {learning~rate}}\
+    \cdot \left(\
+    \overbrace {\underbrace {r_{t+1}} _{\rm {reward}}+\underbrace {\gamma } _{\rm {discount~factor}}\cdot \underbrace {\max _{a}Q(s_{t+1},a)} _{\rm {estimate~of~optimal~future~value}}} ^{\rm {learned~value}}-\underbrace {Q(s_{t},a_{t})} _{\rm {old~value}}\right)  (from wikipedia)$$
+    
+    asfd
+    
     #+CAPTION: Multi-Layer Neural Network(wikipedia.org)
     #+attr_html: :width 100%
     #+ATTR_LATEX: :width 10cm
