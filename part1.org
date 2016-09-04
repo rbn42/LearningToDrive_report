@@ -198,12 +198,23 @@ Q(s_{t},a_{t})\
     which is a weighted sum of the rewards of all the future states. 
 
     To find out the actions which leads to the maximum future rewards,
-    The agent needs to predict the future rewards of all the allowed actions.
+    The agent needs to predict the future rewards of all the 3 allowed actions, turning left, turning right and going forward.
     The prediction function is called an action value function, and denoted as 
-    $Q(s,a)$. $s$ and $a$ are the corresponding state and action.
-    In our program, the action value function is a neural network.
+    $Q(s,a)$, where $s$ and $a$ are the state and action.
+    In our program, the action value function is a neural network (Figure [[fig:nn_2d]]).
+    The neural network takes the state as its input. 
+    Its output layer contains 3 units, corresponding to the 3 allowed actions.
+    These outputs are regarded as the predicted action value of each action.
+ 
+    #+CAPTION: Multi-Layer Neural Network
+    #+attr_html: :width 100%
+    #+NAME:   fig:nn_2d
+    [[file:images/nn_2d.digraph.png]]
 
     At the beginning, the neural network of the action value function will be randomly initialized.
+    The weights of the neural connections are randomized by Gaussian Distribution 
+    ${\mathcal {N}}(0 ,\,0.005 ^{2})$,
+    and the biases of neural units are set to 0.
     Its prediction accuracy will be improved by the knowledge of the environment.
     The knowledge of the environment comes as the form of the order of states and the corresponding rewards.
     These knowledge will be used to update the action value function by the Q-Learning algorithm [[eqn:qlearning]].
@@ -224,13 +235,8 @@ Q(s_{t},a_{t})\
     #+ATTR_LATEX: :width 10cm
     #+NAME:   fig:nn_wiki
     [[file:images/Artificial_neural_network.png]]
-   
-    #+CAPTION: Multi-Layer Neural Network
-    #+attr_html: :width 100%
-    #+NAME:   fig:nn_2d
-    [[file:images/nn_2d.digraph.png]]
 
-    #+INCLUDE: "./code/nn_2d.py" src python -n -r
+      #+INCLUDE: "./code/nn_2d.py" src python -n -r
 
 **** Rewarding Rules
      For non-collision frames, the rewards are 0.0. 
